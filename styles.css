@@ -6273,21 +6273,22 @@ section::after {
     /* Navbar Mobile Menu - Clean Tesla-style Design */
     .nav-menu {
         position: fixed;
-        top: 0;
+        top: 125px;
         left: -100%;
         flex-direction: column;
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(20px);
         width: 100%;
-        height: 100vh;
-        padding: 120px 2rem 2rem;
-        border-top: none;
+        height: calc(100vh - 125px);
+        padding: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
         transition: left 0.3s ease;
         z-index: 99998;
         overflow-y: auto;
         box-shadow: none;
         align-items: flex-start;
         gap: 0;
+        transform: none;
     }
     
     .nav-menu.active {
@@ -6299,18 +6300,19 @@ section::after {
         margin: 0;
         padding: 0;
         display: block;
+        transform: none;
     }
     
     .nav-link {
         width: 100%;
-        padding: 1rem 0;
+        padding: 1rem 2rem;
         text-align: left;
         border-radius: 0;
         background: transparent;
         border: none;
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 700;
         color: #000;
         transition: color 0.2s ease;
         display: block;
@@ -6318,6 +6320,7 @@ section::after {
         box-shadow: none;
         text-transform: none;
         letter-spacing: 0;
+        transform: none;
     }
     
     .nav-link::before {
@@ -6336,6 +6339,7 @@ section::after {
     .nav-dropdown {
         width: 100%;
         display: block;
+        transform: none;
     }
 
     .dropdown-toggle {
@@ -6346,12 +6350,13 @@ section::after {
         border-radius: 0;
         position: relative;
         text-align: left;
-        padding: 1rem 0;
+        padding: 1rem 2rem;
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         background: transparent;
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 700;
         color: #000;
+        transform: none;
     }
     
     .dropdown-toggle::after {
@@ -6405,7 +6410,7 @@ section::after {
     .dropdown-link {
         transform: none !important;
         width: 100%;
-        padding: 0.75rem 0;
+        padding: 0.75rem 2rem 0.75rem 3.5rem;
         display: block;
         border-radius: 0;
         background: transparent;
@@ -6413,7 +6418,7 @@ section::after {
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         color: #666;
         font-size: 0.9rem;
-        font-weight: 400;
+        font-weight: 700;
         transition: color 0.2s ease;
         text-align: left;
         box-shadow: none;
