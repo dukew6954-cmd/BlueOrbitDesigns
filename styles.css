@@ -6379,8 +6379,8 @@ section::after {
     }
 
     .dropdown-menu {
-        position: static;
-        transform: none;
+        position: static !important;
+        transform: none !important;
         opacity: 0;
         visibility: hidden;
         max-height: 0;
@@ -6395,14 +6395,24 @@ section::after {
                     visibility 0.3s ease, 
                     max-height 0.3s ease, 
                     padding 0.3s ease;
-        display: block;
+        display: block !important;
     }
     
     .nav-dropdown.active .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
+        opacity: 1 !important;
+        visibility: visible !important;
         max-height: 500px;
         padding: 0.5rem 0 0.5rem 1.5rem;
+    }
+    
+    .dropdown-menu li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .dropdown-menu li a {
+        color: #fff !important;
     }
 
     .dropdown-menu::before {
@@ -6411,22 +6421,24 @@ section::after {
 
     .dropdown-link {
         transform: none !important;
-        width: 100%;
-        padding: 0.75rem 2rem 0.75rem 3.5rem;
-        display: block;
-        border-radius: 0;
+        width: 100% !important;
+        padding: 0.75rem 2rem 0.75rem 3.5rem !important;
+        display: block !important;
+        border-radius: 0 !important;
         background: transparent !important;
-        border: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        color: #fff !important;
-        font-size: 0.9rem;
-        font-weight: 700;
+        border: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+        color: #ffffff !important;
+        font-size: 0.9rem !important;
+        font-weight: 700 !important;
         transition: color 0.2s ease;
-        text-align: left;
-        box-shadow: none;
-        text-shadow: none;
-        text-transform: none;
-        letter-spacing: 0;
+        text-align: left !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        text-transform: none !important;
+        letter-spacing: 0 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     .dropdown-link:hover,
