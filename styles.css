@@ -484,7 +484,7 @@ section:not(.hero) > *:not(::before):not(::after) {
 
 @media (max-width: 968px) {
     body .mission-control-section {
-        padding-top: 12rem !important;
+        padding-top: 16rem !important;
         padding-bottom: 6rem !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
@@ -495,8 +495,8 @@ section:not(.hero) > *:not(::before):not(::after) {
     }
     
     body .mission-control-section .section-header {
-        margin-top: 3rem !important;
-        padding-top: 3rem !important;
+        margin-top: 2rem !important;
+        padding-top: 2rem !important;
     }
     
     .monitor-frame {
@@ -5394,27 +5394,27 @@ section::after {
 
 @media (max-width: 480px) {
     body .mission-control-section {
-        padding-top: 12rem !important;
+        padding-top: 18rem !important;
         padding-bottom: 6rem !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
     
     body .mission-control-section .section-header {
-        margin-top: 3rem !important;
-        padding-top: 3rem !important;
+        margin-top: 2rem !important;
+        padding-top: 2rem !important;
     }
     
     body .process-section {
-        padding-top: 12rem !important;
+        padding-top: 18rem !important;
         padding-bottom: 6rem !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
     
     body .process-section .section-header {
-        margin-top: 3rem !important;
-        padding-top: 3rem !important;
+        margin-top: 2rem !important;
+        padding-top: 2rem !important;
     }
     
     .process-circle {
@@ -8328,27 +8328,27 @@ section::after {
     }
     
     body .mission-control-section {
-        padding-top: 12rem !important;
+        padding-top: 18rem !important;
         padding-bottom: 6rem !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
     
     body .mission-control-section .section-header {
-        margin-top: 3rem !important;
-        padding-top: 3rem !important;
+        margin-top: 2rem !important;
+        padding-top: 2rem !important;
     }
     
     body .process-section {
-        padding-top: 12rem !important;
+        padding-top: 18rem !important;
         padding-bottom: 6rem !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
     
     body .process-section .section-header {
-        margin-top: 3rem !important;
-        padding-top: 3rem !important;
+        margin-top: 2rem !important;
+        padding-top: 2rem !important;
     }
     
     .selected-work-section,
@@ -8433,15 +8433,15 @@ section::after {
     }
     
     body .process-section {
-        padding-top: 12rem !important;
+        padding-top: 16rem !important;
         padding-bottom: 6rem !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
     
     body .process-section .section-header {
-        margin-top: 3rem !important;
-        padding-top: 3rem !important;
+        margin-top: 2rem !important;
+        padding-top: 2rem !important;
     }
     
     body .process-section .container {
@@ -9164,31 +9164,31 @@ nav#navbar.navbar {
 /* Extra small Android phones (360px and below) */
 @media (max-width: 360px) {
     body .mission-control-section {
-        padding-top: 12rem !important;
+        padding-top: 18rem !important;
         padding-bottom: 6rem !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
     
     body .mission-control-section .section-header {
-        margin-top: 3rem !important;
-        padding-top: 3rem !important;
+        margin-top: 2rem !important;
+        padding-top: 2rem !important;
     }
     
     body .process-section {
-        padding-top: 12rem !important;
+        padding-top: 18rem !important;
         padding-bottom: 6rem !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
     
     body .process-section .section-header {
-        margin-top: 3rem !important;
-        padding-top: 3rem !important;
+        margin-top: 2rem !important;
+        padding-top: 2rem !important;
     }
     
     .hero {
-        padding-top: 180px !important;
+        padding-top: 200px !important;
         padding-bottom: 4rem !important;
     }
 }
