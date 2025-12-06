@@ -106,24 +106,28 @@ if (hamburger && navMenu) {
 }
 
 // Dropdown Toggle for Mobile
-document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-    toggle.addEventListener('click', (e) => {
-        // Always prevent default on mobile, only toggle dropdown
-        if (window.innerWidth <= 968) {
-            e.preventDefault();
-            e.stopPropagation();
-            const dropdown = toggle.parentElement;
-            
-            // Close all other dropdowns
-            document.querySelectorAll('.nav-dropdown').forEach(dd => {
-                if (dd !== dropdown) {
-                    dd.classList.remove('active');
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            // Always prevent default on mobile, only toggle dropdown
+            if (window.innerWidth <= 968) {
+                e.preventDefault();
+                e.stopPropagation();
+                const dropdown = toggle.closest('.nav-dropdown');
+                
+                if (dropdown) {
+                    // Close all other dropdowns
+                    document.querySelectorAll('.nav-dropdown').forEach(dd => {
+                        if (dd !== dropdown) {
+                            dd.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    dropdown.classList.toggle('active');
                 }
-            });
-            
-            // Toggle current dropdown
-            dropdown.classList.toggle('active');
-        }
+            }
+        });
     });
 });
 
