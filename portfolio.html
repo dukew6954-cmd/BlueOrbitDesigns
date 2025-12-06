@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Comfortaa:wght@300;400;500;600;700&family=Bungee&family=Righteous&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
 </head>
 <body>
@@ -39,9 +39,9 @@
         <ul class="nav-menu" id="nav-menu" style="display: flex; list-style: none; gap: 2rem; align-items: center; margin: 0; padding: 0;">
             <li><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-dropdown">
-                <a href="services.html" class="nav-link dropdown-toggle">Services <span class="dropdown-arrow">▼</span></a>
+                <a href="services.html" class="nav-link dropdown-toggle">Capabilities <span class="dropdown-arrow">▼</span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="services.html" class="dropdown-link">All Services</a></li>
+                    <li><a href="services.html" class="dropdown-link">All Capabilities</a></li>
                     <li><a href="web-development.html" class="dropdown-link">Web Development</a></li>
                     <li><a href="app-development.html" class="dropdown-link">App Development</a></li>
                     <li><a href="internal-systems.html" class="dropdown-link">Internal Systems</a></li>
@@ -59,351 +59,143 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header portfolio-hero">
-        <div class="page-header-background"></div>
-        <div class="container">
-            <div class="portfolio-hero-content">
-                <div class="portfolio-hero-text">
-                    <span class="page-label">Portfolio</span>
-                    <h1 class="page-title">Showcasing Our Best Work</h1>
-                    <p class="page-subtitle">
-                        Explore our portfolio of successful projects across web development, mobile apps, 
-                        and enterprise solutions. Each project represents our commitment to excellence and innovation.
-                    </p>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Our Work</span>
+                    <span class="title-line">That Delivers Results</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Explore our portfolio of successful projects across web development, mobile apps, 
+                    and enterprise solutions. Each project solves real business problems and delivers measurable outcomes.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Filter -->
-    <section class="services-preview">
-        <div class="container">
-            <div class="filter-buttons-new">
-                <button class="filter-btn-new active" data-filter="all">
-                    <span>All Projects</span>
-                </button>
-                <button class="filter-btn-new" data-filter="web">
-                    <span>Web Development</span>
-                </button>
-                <button class="filter-btn-new" data-filter="app">
-                    <span>App Development</span>
-                </button>
-                <button class="filter-btn-new" data-filter="systems">
-                    <span>Internal Systems</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Grid -->
-    <section class="portfolio-section-new">
-        <div class="container">
-            <div class="portfolio-grid-new">
-                <!-- Project 1 -->
-                <div class="portfolio-item-new" data-category="web">
-                    <div class="portfolio-image-new">
-                        <div class="portfolio-glow"></div>
-                        <div class="portfolio-placeholder-new web-placeholder-new">
-                            <div class="placeholder-content-new">
-                                <div class="placeholder-header-new"></div>
-                                <div class="placeholder-grid-new">
-                                    <div class="placeholder-card-new"></div>
-                                    <div class="placeholder-card-new"></div>
-                                    <div class="placeholder-card-new"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-overlay-new">
-                            <div class="overlay-content">
-                                <h3>E-Commerce Platform</h3>
-                                <p>Modern online store with advanced features and seamless shopping experience</p>
-                                <a href="#" class="portfolio-link-new">View Project →</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info-new">
-                        <span class="portfolio-category-new">Web Development</span>
-                        <h4>E-Commerce Platform</h4>
-                        <div class="portfolio-tags">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>Stripe</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="portfolio-item-new" data-category="app">
-                    <div class="portfolio-image-new">
-                        <div class="portfolio-glow"></div>
-                        <div class="portfolio-placeholder-new app-placeholder-new">
-                            <div class="phone-frame-new">
-                                <div class="phone-screen-new">
-                                    <div class="app-header-new"></div>
-                                    <div class="app-content-new">
-                                        <div class="app-stat-new"></div>
-                                        <div class="app-stat-new"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-overlay-new">
-                            <div class="overlay-content">
-                                <h3>Fitness Tracking App</h3>
-                                <p>iOS & Android app for health enthusiasts with real-time tracking</p>
-                                <a href="#" class="portfolio-link-new">View Project →</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info-new">
-                        <span class="portfolio-category-new">App Development</span>
-                        <h4>Fitness Tracking App</h4>
-                        <div class="portfolio-tags">
-                            <span>React Native</span>
-                            <span>Firebase</span>
-                            <span>HealthKit</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="portfolio-item-new" data-category="systems">
-                    <div class="portfolio-image-new">
-                        <div class="portfolio-glow"></div>
-                        <div class="portfolio-placeholder-new systems-placeholder-new">
-                            <div class="dashboard-frame-new">
-                                <div class="dashboard-top-new"></div>
-                                <div class="dashboard-charts-new">
-                                    <div class="chart-bar-new"></div>
-                                    <div class="chart-bar-new"></div>
-                                    <div class="chart-bar-new"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-overlay-new">
-                            <div class="overlay-content">
-                                <h3>Enterprise CRM System</h3>
-                                <p>Custom customer relationship management with advanced analytics</p>
-                                <a href="#" class="portfolio-link-new">View Project →</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info-new">
-                        <span class="portfolio-category-new">Internal Systems</span>
-                        <h4>Enterprise CRM System</h4>
-                        <div class="portfolio-tags">
-                            <span>Python</span>
-                            <span>PostgreSQL</span>
-                            <span>AWS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="portfolio-item-new" data-category="web">
-                    <div class="portfolio-image-new">
-                        <div class="portfolio-glow"></div>
-                        <div class="portfolio-placeholder-new web-placeholder-new">
-                            <div class="placeholder-content-new">
-                                <div class="placeholder-header-new"></div>
-                                <div class="placeholder-stats-new">
-                                    <div class="stat-box-new"></div>
-                                    <div class="stat-box-new"></div>
-                                    <div class="stat-box-new"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-overlay-new">
-                            <div class="overlay-content">
-                                <h3>SaaS Dashboard</h3>
-                                <p>Analytics platform for businesses with real-time insights</p>
-                                <a href="#" class="portfolio-link-new">View Project →</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info-new">
-                        <span class="portfolio-category-new">Web Development</span>
-                        <h4>SaaS Dashboard</h4>
-                        <div class="portfolio-tags">
-                            <span>Next.js</span>
-                            <span>TypeScript</span>
-                            <span>Chart.js</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="portfolio-item-new" data-category="app">
-                    <div class="portfolio-image-new">
-                        <div class="portfolio-glow"></div>
-                        <div class="portfolio-placeholder-new app-placeholder-new">
-                            <div class="phone-frame-new">
-                                <div class="phone-screen-new">
-                                    <div class="app-header-new"></div>
-                                    <div class="app-content-new">
-                                        <div class="food-card-new"></div>
-                                        <div class="food-card-new"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-overlay-new">
-                            <div class="overlay-content">
-                                <h3>Food Delivery App</h3>
-                                <p>On-demand food ordering platform with real-time tracking</p>
-                                <a href="#" class="portfolio-link-new">View Project →</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info-new">
-                        <span class="portfolio-category-new">App Development</span>
-                        <h4>Food Delivery App</h4>
-                        <div class="portfolio-tags">
-                            <span>Flutter</span>
-                            <span>Firebase</span>
-                            <span>Maps API</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="portfolio-item-new" data-category="systems">
-                    <div class="portfolio-image-new">
-                        <div class="portfolio-glow"></div>
-                        <div class="portfolio-placeholder-new systems-placeholder-new">
-                            <div class="dashboard-frame-new">
-                                <div class="dashboard-top-new"></div>
-                                <div class="dashboard-list-new">
-                                    <div class="list-item-new"></div>
-                                    <div class="list-item-new"></div>
-                                    <div class="list-item-new"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-overlay-new">
-                            <div class="overlay-content">
-                                <h3>Inventory Management</h3>
-                                <p>Automated warehouse system with real-time stock tracking</p>
-                                <a href="#" class="portfolio-link-new">View Project →</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info-new">
-                        <span class="portfolio-category-new">Internal Systems</span>
-                        <h4>Inventory Management</h4>
-                        <div class="portfolio-tags">
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                            <span>IoT Integration</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="reviews-section">
+    <!-- Portfolio Section -->
+    <section class="selected-work-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">What Clients Say</span>
-                <h2 class="section-title">Testimonials</h2>
+                <span class="section-label">Portfolio</span>
+                <h2 class="section-title">Our Work</h2>
             </div>
-        </div>
-        <div class="reviews-slider">
-            <div class="reviews-track">
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"BlueOrbit Designs transformed our online presence. Their attention to detail and technical expertise exceeded our expectations. Highly recommended!"</p>
-                    <div class="review-author">
-                        <div class="author-avatar"></div>
-                        <div class="author-info">
-                            <div class="author-name">Sarah Johnson</div>
-                            <div class="author-role">CEO, TechCorp</div>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="app">App Development</button>
+                <button class="filter-btn" data-filter="systems">Internal Systems</button>
+            </div>
+            <div class="selected-work-grid">
+                <div class="work-card" data-category="systems">
+                    <div class="work-visual">
+                        <div class="work-image-placeholder" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(0, 212, 255, 0.15) 100%);">
+                            <div class="work-image-overlay"></div>
                         </div>
                     </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"The mobile app they built for us has been a game-changer. User engagement increased by 300% in the first month. Outstanding work!"</p>
-                    <div class="review-author">
-                        <div class="author-avatar"></div>
-                        <div class="author-info">
-                            <div class="author-name">Michael Chen</div>
-                            <div class="author-role">Founder, StartupXYZ</div>
-                        </div>
+                    <div class="work-content">
+                        <h3 class="work-title">Enterprise Dashboard Platform</h3>
+                        <p class="work-description">Replaced manual reporting with real-time analytics, reducing decision time by 70% and increasing operational efficiency.</p>
                     </div>
                 </div>
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Their internal system solution streamlined our operations significantly. The team was professional, responsive, and delivered on time."</p>
-                    <div class="review-author">
-                        <div class="author-avatar"></div>
-                        <div class="author-info">
-                            <div class="author-name">Emily Rodriguez</div>
-                            <div class="author-role">Operations Director, EnterpriseCo</div>
+                
+                <div class="work-card" data-category="web">
+                    <div class="work-visual">
+                        <div class="work-image-placeholder" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.15) 100%);">
+                            <div class="work-image-overlay"></div>
                         </div>
                     </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Exceptional service and attention to detail. BlueOrbit Designs delivered exactly what we needed on time and on budget."</p>
-                    <div class="review-author">
-                        <div class="author-avatar"></div>
-                        <div class="author-info">
-                            <div class="author-name">David Thompson</div>
-                            <div class="author-role">CTO, InnovateNow</div>
-                        </div>
+                    <div class="work-content">
+                        <h3 class="work-title">E-commerce Platform</h3>
+                        <p class="work-description">Streamlined checkout process increased conversion by 45% and reduced cart abandonment by 60%.</p>
                     </div>
                 </div>
-                <!-- Duplicate cards for seamless loop -->
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"BlueOrbit Designs transformed our online presence. Their attention to detail and technical expertise exceeded our expectations. Highly recommended!"</p>
-                    <div class="review-author">
-                        <div class="author-avatar"></div>
-                        <div class="author-info">
-                            <div class="author-name">Sarah Johnson</div>
-                            <div class="author-role">CEO, TechCorp</div>
+                
+                <div class="work-card" data-category="app">
+                    <div class="work-visual">
+                        <div class="work-image-placeholder" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(139, 92, 246, 0.15) 100%);">
+                            <div class="work-image-overlay"></div>
                         </div>
                     </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"The mobile app they built for us has been a game-changer. User engagement increased by 300% in the first month. Outstanding work!"</p>
-                    <div class="review-author">
-                        <div class="author-avatar"></div>
-                        <div class="author-info">
-                            <div class="author-name">Michael Chen</div>
-                            <div class="author-role">Founder, StartupXYZ</div>
-                        </div>
+                    <div class="work-content">
+                        <h3 class="work-title">Fitness Tracking App</h3>
+                        <p class="work-description">Increased user retention by 65% and daily active users by 120% with intuitive design and seamless performance.</p>
                     </div>
                 </div>
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Their internal system solution streamlined our operations significantly. The team was professional, responsive, and delivered on time."</p>
-                    <div class="review-author">
-                        <div class="author-avatar"></div>
-                        <div class="author-info">
-                            <div class="author-name">Emily Rodriguez</div>
-                            <div class="author-role">Operations Director, EnterpriseCo</div>
+                
+                <div class="work-card" data-category="web">
+                    <div class="work-visual">
+                        <div class="work-image-placeholder" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(0, 212, 255, 0.15) 100%);">
+                            <div class="work-image-overlay"></div>
                         </div>
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">SaaS Platform Redesign</h3>
+                        <p class="work-description">Modernized interface improved user engagement by 85% and reduced support tickets by 50%.</p>
+                    </div>
+                </div>
+                
+                <div class="work-card" data-category="app">
+                    <div class="work-visual">
+                        <div class="work-image-placeholder" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.15) 100%);">
+                            <div class="work-image-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">E-commerce Mobile App</h3>
+                        <p class="work-description">Streamlined mobile shopping experience increased mobile conversion by 55% and reduced checkout time by 40%.</p>
+                    </div>
+                </div>
+                
+                <div class="work-card" data-category="systems">
+                    <div class="work-visual">
+                        <div class="work-image-placeholder" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(139, 92, 246, 0.15) 100%);">
+                            <div class="work-image-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">Workflow Automation System</h3>
+                        <p class="work-description">Automated 85% of manual processes, saving 40 hours per week and reducing errors by 95%.</p>
+                    </div>
+                </div>
+                
+                <div class="work-card" data-category="systems">
+                    <div class="work-visual">
+                        <div class="work-image-placeholder" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(0, 212, 255, 0.15) 100%);">
+                            <div class="work-image-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">Business Intelligence Platform</h3>
+                        <p class="work-description">Centralized data analytics improved strategic decision-making speed by 60% and increased data accuracy.</p>
+                    </div>
+                </div>
+                
+                <div class="work-card" data-category="systems">
+                    <div class="work-visual">
+                        <div class="work-image-placeholder" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.15) 100%);">
+                            <div class="work-image-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">Enterprise Task Management</h3>
+                        <p class="work-description">Improved team productivity by 80% with real-time collaboration features and intuitive task organization.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <div class="cta-text">
-                    <h2>Have a Project in Mind?</h2>
-                    <p>Let's bring your vision to life together.</p>
-                    <a href="contact.html" class="btn btn-primary btn-large">Start Your Project</a>
-                </div>
+                <h2 class="cta-headline">Ready to build something that lasts?</h2>
+                <a href="contact.html" class="btn btn-primary btn-large">Get Started</a>
             </div>
         </div>
     </section>
@@ -418,10 +210,10 @@
                             <img src="Vetern Owned & Operated-2.svg" alt="BlueOrbit Designs - Veteran Owned & Operated" style="height: 200px; width: auto; max-width: 500px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));">
                         </a>
                     </div>
-                    <p style="margin-top: 1rem;">Building the future of digital innovation, one project at a time.</p>
+                    <p style="margin-top: 1rem;">We solve business problems through technology that delivers measurable outcomes.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4>Capabilities</h4>
                     <ul>
                         <li><a href="web-development.html">Web Development</a></li>
                         <li><a href="app-development.html">App Development</a></li>
@@ -455,5 +247,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
     <script src="starfield.js"></script>
+    <script>
+        // Portfolio Filter
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const workCards = document.querySelectorAll('.work-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    workCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            const cardCategory = card.getAttribute('data-category');
+                            if (cardCategory === filterValue) {
+                                card.style.display = 'block';
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0)';
+                                }, 10);
+                            } else {
+                                card.style.opacity = '0';
+                                card.style.transform = 'translateY(20px)';
+                                setTimeout(() => {
+                                    card.style.display = 'none';
+                                }, 300);
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Comfortaa:wght@300;400;500;600;700&family=Bungee&family=Righteous&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
 </head>
 <body>
@@ -39,9 +39,9 @@
         <ul class="nav-menu" id="nav-menu" style="display: flex; list-style: none; gap: 2rem; align-items: center; margin: 0; padding: 0;">
             <li><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-dropdown">
-                <a href="services.html" class="nav-link dropdown-toggle active">Services <span class="dropdown-arrow">▼</span></a>
+                <a href="services.html" class="nav-link dropdown-toggle active">Capabilities <span class="dropdown-arrow">▼</span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="services.html" class="dropdown-link">All Services</a></li>
+                    <li><a href="services.html" class="dropdown-link">All Capabilities</a></li>
                     <li><a href="web-development.html" class="dropdown-link">Web Development</a></li>
                     <li><a href="app-development.html" class="dropdown-link active">App Development</a></li>
                     <li><a href="internal-systems.html" class="dropdown-link">Internal Systems</a></li>
@@ -59,20 +59,19 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header app-dev-hero">
-        <div class="page-header-background"></div>
-        <div class="container">
-            <div class="app-dev-hero-content">
-                <div class="app-dev-hero-text">
-                    <span class="page-label">App Development</span>
-                    <h1 class="page-title">Transform Ideas Into Powerful Mobile Applications</h1>
-                    <p class="page-subtitle">
-                        We build native and cross-platform mobile applications that provide exceptional 
-                        user experiences on iOS and Android. From concept to launch, we deliver apps that 
-                        engage users and drive business results.
-                    </p>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">App Development</span>
+                    <span class="title-line">That Drives Results</span>
+                </h1>
+                <p class="hero-subtitle">
+                    We build native and cross-platform mobile applications that solve business problems, 
+                    increase user engagement, and deliver exceptional mobile experiences.
+                </p>
             </div>
         </div>
     </section>
@@ -87,7 +86,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                             <rect x="5" y="2" width="14" height="20" rx="2"></rect>
                             <line x1="12" y1="18" x2="12" y2="18.01"></line>
                         </svg>
@@ -97,7 +96,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                             <rect x="2" y="3" width="20" height="14" rx="2"></rect>
                             <line x1="8" y1="21" x2="16" y2="21"></line>
                             <line x1="12" y1="17" x2="12" y2="21"></line>
@@ -108,7 +107,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                             <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                             <line x1="12" y1="22.08" x2="12" y2="12"></line>
@@ -121,137 +120,150 @@
         </div>
     </section>
 
-    <!-- Tech Stack Section -->
-    <section class="services-preview">
+    <!-- Selected Work Section -->
+    <section class="selected-work-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Technologies</span>
-                <h2 class="section-title">Our Tech Stack</h2>
+                <span class="section-label">Portfolio</span>
+                <h2 class="section-title">Selected Work</h2>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="M2 17l10 5 10-5"></path>
-                            <path d="M2 12l10 5 10-5"></path>
-                        </svg>
+            <div class="selected-work-grid">
+                <div class="work-card">
+                    <div class="work-visual">
+                        <div class="work-image-placeholder" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(0, 212, 255, 0.15) 100%);">
+                            <div class="work-image-overlay"></div>
+                        </div>
                     </div>
-                    <h3>Native</h3>
-                    <p>Swift, SwiftUI, Kotlin, Jetpack Compose - Platform-specific technologies that deliver the best performance and native user experience.</p>
+                    <div class="work-content">
+                        <h3 class="work-title">Fitness Tracking App</h3>
+                        <p class="work-description">Increased user retention by 65% and daily active users by 120% with intuitive design and seamless performance.</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="16 18 22 12 16 6"></polyline>
-                            <polyline points="8 6 2 12 8 18"></polyline>
-                        </svg>
+                
+                <div class="work-card">
+                    <div class="work-visual">
+                        <div class="work-image-placeholder" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.15) 100%);">
+                            <div class="work-image-overlay"></div>
+                        </div>
                     </div>
-                    <h3>Cross-Platform</h3>
-                    <p>React Native, Flutter, Ionic - Build once, deploy everywhere with frameworks that work seamlessly across iOS and Android.</p>
+                    <div class="work-content">
+                        <h3 class="work-title">E-commerce Mobile App</h3>
+                        <p class="work-description">Streamlined mobile shopping experience increased mobile conversion by 55% and reduced checkout time by 40%.</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                        </svg>
+                
+                <div class="work-card">
+                    <div class="work-visual">
+                        <div class="work-image-placeholder" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(139, 92, 246, 0.15) 100%);">
+                            <div class="work-image-overlay"></div>
+                        </div>
                     </div>
-                    <h3>Backend & Services</h3>
-                    <p>Firebase, AWS Amplify, REST APIs, GraphQL - Robust backend solutions and services that power your mobile applications.</p>
+                    <div class="work-content">
+                        <h3 class="work-title">Enterprise Task Management</h3>
+                        <p class="work-description">Improved team productivity by 80% with real-time collaboration features and intuitive task organization.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="selected-work-footer">
+                <a href="portfolio.html" class="btn btn-secondary">View Other Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Stack</span>
+                <h2 class="section-title">Technology Stack</h2>
+            </div>
+            <div class="tech-stack-grid">
+                <div class="tech-item">
+                    <span class="tech-label">React Native</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-label">Flutter</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-label">Swift</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-label">Kotlin</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-label">Firebase</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="reviews-section">
+    <!-- Capabilities Section -->
+    <section class="services-preview">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Why Choose Us</span>
-                <h2 class="section-title">Benefits</h2>
+                <span class="section-label">Capabilities</span>
+                <h2 class="section-title">What We Offer</h2>
             </div>
-        </div>
-        <div class="reviews-slider">
-            <div class="reviews-track">
-                <div class="review-card">
-                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
+            <div class="capabilities-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
+                    </div>
+                    <h3>Native iOS & Android</h3>
+                    <p>Platform-specific apps built with Swift and Kotlin for optimal performance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Cross-Platform Development</h3>
+                    <p>Build once, deploy everywhere with React Native and Flutter.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
                     </div>
-                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">User-Centric Design</h3>
-                    <p class="review-text">Intuitive interfaces and smooth user experiences that keep users engaged and coming back for more.</p>
+                    <h3>User Experience Design</h3>
+                    <p>Intuitive interfaces that keep users engaged and coming back.</p>
                 </div>
-                <div class="review-card">
-                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                             <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline>
                         </svg>
                     </div>
-                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">Performance Optimized</h3>
-                    <p class="review-text">Lightning-fast apps with optimized code, efficient memory usage, and smooth animations for the best user experience.</p>
+                    <h3>Performance Optimization</h3>
+                    <p>Lightning-fast apps with optimized code and smooth animations.</p>
                 </div>
-                <div class="review-card">
-                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                         </svg>
                     </div>
-                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">App Store Ready</h3>
-                    <p class="review-text">Complete App Store Optimization (ASO) and submission process to maximize visibility and downloads.</p>
+                    <h3>App Store Submission</h3>
+                    <p>Complete ASO and submission process for iOS and Android stores.</p>
                 </div>
-                <div class="review-card">
-                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
                         </svg>
                     </div>
-                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">Ongoing Support</h3>
-                    <p class="review-text">Continuous updates, bug fixes, and feature enhancements to keep your app current and competitive.</p>
-                </div>
-                <!-- Duplicate cards for seamless loop -->
-                <div class="review-card">
-                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
-                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">User-Centric Design</h3>
-                    <p class="review-text">Intuitive interfaces and smooth user experiences that keep users engaged and coming back for more.</p>
-                </div>
-                <div class="review-card">
-                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
-                            <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline>
-                        </svg>
-                    </div>
-                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">Performance Optimized</h3>
-                    <p class="review-text">Lightning-fast apps with optimized code, efficient memory usage, and smooth animations for the best user experience.</p>
-                </div>
-                <div class="review-card">
-                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                        </svg>
-                    </div>
-                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">App Store Ready</h3>
-                    <p class="review-text">Complete App Store Optimization (ASO) and submission process to maximize visibility and downloads.</p>
-                </div>
-                <div class="review-card">
-                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
-                    </div>
-                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">Ongoing Support</h3>
-                    <p class="review-text">Continuous updates, bug fixes, and feature enhancements to keep your app current and competitive.</p>
+                    <h3>Ongoing Support & Updates</h3>
+                    <p>Continuous maintenance, updates, and feature enhancements.</p>
                 </div>
             </div>
         </div>
@@ -261,29 +273,81 @@
     <section class="process-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">How We Work</span>
-                <h2 class="section-title">Our Process</h2>
+                <span class="section-label">Process</span>
+                <h2 class="section-title">How We Work</h2>
             </div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">01</div>
-                    <h3>Discovery</h3>
-                    <p>We understand your goals, challenges, and requirements through in-depth consultation.</p>
+            <div class="process-tabs-container">
+                <div class="process-timeline">
+                    <div class="process-circle-wrapper">
+                        <button class="process-circle active" data-step="0">
+                            <div class="circle-inner">
+                                <span class="circle-number">01</span>
+                            </div>
+                            <div class="circle-glow"></div>
+                            <div class="circle-label">Discovery</div>
+                        </button>
+                        <div class="orbital-line"></div>
+                        <button class="process-circle" data-step="1">
+                            <div class="circle-inner">
+                                <span class="circle-number">02</span>
+                            </div>
+                            <div class="circle-glow"></div>
+                            <div class="circle-label">Design</div>
+                        </button>
+                        <div class="orbital-line"></div>
+                        <button class="process-circle" data-step="2">
+                            <div class="circle-inner">
+                                <span class="circle-number">03</span>
+                            </div>
+                            <div class="circle-glow"></div>
+                            <div class="circle-label">Build</div>
+                        </button>
+                        <div class="orbital-line"></div>
+                        <button class="process-circle" data-step="3">
+                            <div class="circle-inner">
+                                <span class="circle-number">04</span>
+                            </div>
+                            <div class="circle-glow"></div>
+                            <div class="circle-label">Launch</div>
+                        </button>
+                        <div class="orbital-line"></div>
+                        <button class="process-circle" data-step="4">
+                            <div class="circle-inner">
+                                <span class="circle-number">05</span>
+                            </div>
+                            <div class="circle-glow"></div>
+                            <div class="circle-label">Orbit</div>
+                        </button>
+                    </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">02</div>
-                    <h3>Design</h3>
-                    <p>We create wireframes and prototypes that align with your vision and user needs.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">03</div>
-                    <h3>Development</h3>
-                    <p>Our team builds your solution using best practices and modern technologies.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">04</div>
-                    <h3>Launch</h3>
-                    <p>We deploy your solution and provide ongoing support to ensure success.</p>
+                <div class="process-content-wrapper">
+                    <div class="process-content">
+                        <div class="process-step active" data-step="0">
+                            <div class="step-number">01</div>
+                            <h3>Discovery</h3>
+                            <p>We identify your business objectives, target audience, and technical requirements for your mobile app.</p>
+                        </div>
+                        <div class="process-step" data-step="1">
+                            <div class="step-number">02</div>
+                            <h3>Design</h3>
+                            <p>We create user-focused mobile designs that prioritize usability and conversion for your app.</p>
+                        </div>
+                        <div class="process-step" data-step="2">
+                            <div class="step-number">03</div>
+                            <h3>Build</h3>
+                            <p>We build scalable, performant mobile apps using proven technologies and best practices.</p>
+                        </div>
+                        <div class="process-step" data-step="3">
+                            <div class="step-number">04</div>
+                            <h3>Launch</h3>
+                            <p>We deploy to app stores, optimize for discovery, and ensure you achieve your mobile goals.</p>
+                        </div>
+                        <div class="process-step" data-step="4">
+                            <div class="step-number">05</div>
+                            <h3>Orbit</h3>
+                            <p>We provide ongoing support, updates, and scaling for your mobile app as you grow.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -293,11 +357,8 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <div class="cta-text">
-                    <h2>Ready to Build Your Mobile App?</h2>
-                    <p>Let's turn your vision into a powerful mobile application.</p>
-                    <a href="contact.html" class="btn btn-primary btn-large">Get Started</a>
-                </div>
+                <h2 class="cta-headline">Ready to build something that lasts?</h2>
+                <a href="contact.html" class="btn btn-primary btn-large">Get Started</a>
             </div>
         </div>
     </section>
@@ -312,10 +373,10 @@
                             <img src="Vetern Owned & Operated-2.svg" alt="BlueOrbit Designs - Veteran Owned & Operated" style="height: 200px; width: auto; max-width: 500px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));">
                         </a>
                     </div>
-                    <p style="margin-top: 1rem;">Building the future of digital innovation, one project at a time.</p>
+                    <p style="margin-top: 1rem;">We solve business problems through technology that delivers measurable outcomes.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4>Capabilities</h4>
                     <ul>
                         <li><a href="web-development.html">Web Development</a></li>
                         <li><a href="app-development.html">App Development</a></li>

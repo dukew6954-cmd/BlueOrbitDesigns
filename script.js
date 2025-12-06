@@ -865,4 +865,334 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Process Circles Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const processCircles = document.querySelectorAll('.process-circle');
+    const processSteps = document.querySelectorAll('.process-step[data-step]');
+    const processContent = document.querySelector('.process-content');
+    const orbitalLines = document.querySelectorAll('.orbital-line');
+    
+    if (!processCircles.length || !processSteps.length) return;
+    
+    let currentStep = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isSwiping = false;
+    
+    // Circle click handler
+    processCircles.forEach((circle, index) => {
+        circle.addEventListener('click', () => {
+            switchStep(index);
+        });
+    });
+    
+    // Switch step function
+    function switchStep(stepIndex) {
+        if (stepIndex < 0 || stepIndex >= processSteps.length) return;
+        
+        currentStep = stepIndex;
+        
+        // Update circles - fill previous ones
+        processCircles.forEach((circle, index) => {
+            if (index <= stepIndex) {
+                circle.classList.add('active');
+            } else {
+                circle.classList.remove('active');
+            }
+        });
+        
+        // Update orbital lines - fill previous ones
+        orbitalLines.forEach((line, index) => {
+            if (index < stepIndex) {
+                line.classList.add('active');
+            } else {
+                line.classList.remove('active');
+            }
+        });
+        
+        // Update content
+        processSteps.forEach((step, index) => {
+            if (index === stepIndex) {
+                step.classList.add('active');
+            } else {
+                step.classList.remove('active');
+            }
+        });
+        
+        // Scroll active circle into view on mobile
+        if (window.innerWidth <= 768) {
+            processCircles[stepIndex].scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
+        }
+    }
+    
+    // Mobile swipe functionality
+    if (processContent) {
+        let touchStartTime = 0;
+        
+        processContent.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartTime = Date.now();
+            isSwiping = false;
+        }, { passive: true });
+        
+        processContent.addEventListener('touchmove', (e) => {
+            if (!touchStartX) return;
+            
+            const touchX = e.touches[0].clientX;
+            const deltaX = touchX - touchStartX;
+            
+            // Detect horizontal swipe
+            if (Math.abs(deltaX) > 10) {
+                isSwiping = true;
+            }
+        }, { passive: true });
+        
+        processContent.addEventListener('touchend', (e) => {
+            if (!touchStartX || !isSwiping) {
+                touchStartX = 0;
+                return;
+            }
+            
+            touchEndX = e.changedTouches[0].clientX;
+            const deltaX = touchEndX - touchStartX;
+            const deltaTime = Date.now() - touchStartTime;
+            
+            // Swipe threshold: 50px and less than 500ms
+            if (Math.abs(deltaX) > 50 && deltaTime < 500) {
+                if (deltaX > 0) {
+                    // Swipe right - previous step
+                    if (currentStep > 0) {
+                        switchStep(currentStep - 1);
+                    }
+                } else {
+                    // Swipe left - next step
+                    if (currentStep < processSteps.length - 1) {
+                        switchStep(currentStep + 1);
+                    }
+                }
+            }
+            
+            touchStartX = 0;
+            isSwiping = false;
+        }, { passive: true });
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!processContent || !processContent.contains(document.activeElement)) return;
+        
+        if (e.key === 'ArrowLeft' && currentStep > 0) {
+            e.preventDefault();
+            switchStep(currentStep - 1);
+        } else if (e.key === 'ArrowRight' && currentStep < processSteps.length - 1) {
+            e.preventDefault();
+            switchStep(currentStep + 1);
+        }
+    });
+    
+    // Initialize first step
+    switchStep(0);
+});
+
+// Scroll-Triggered Focus Lock
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section:not(.hero):not(.quote-section)');
+    
+    if (!sections.length) {
+        console.log('No sections found for focus lock');
+        return;
+    }
+    
+    console.log(`Found ${sections.length} sections for focus lock`);
+    
+    // Intersection Observer options - trigger when section is in center viewport
+    const observerOptions = {
+        root: null,
+        rootMargin: '-25% 0px -25% 0px', // Trigger when section is 25% from top and bottom
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+    };
+    
+    // Observer callback
+    const observerCallback = (entries) => {
+        entries.forEach(entry => {
+            const section = entry.target;
+            
+            if (!entry.isIntersecting) {
+                section.classList.remove('scroll-focused');
+                return;
+            }
+            
+            // Calculate focus intensity based on how centered the section is
+            const rect = entry.boundingClientRect;
+            const viewportHeight = window.innerHeight;
+            const sectionCenter = rect.top + rect.height / 2;
+            const viewportCenter = viewportHeight / 2;
+            const distanceFromCenter = Math.abs(sectionCenter - viewportCenter);
+            const maxDistance = viewportHeight * 0.5; // Focus zone is 50% of viewport
+            const focusIntensity = Math.max(0, Math.min(1, 1 - (distanceFromCenter / maxDistance)));
+            
+            // Apply focus lock when section is reasonably centered (intensity > 0.15)
+            if (focusIntensity > 0.15) {
+                section.classList.add('scroll-focused');
+            } else {
+                section.classList.remove('scroll-focused');
+            }
+        });
+    };
+    
+    // Create and start observing
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+    sections.forEach((section, index) => {
+        observer.observe(section);
+        console.log(`Observing section ${index + 1}:`, section.className);
+    });
+    
+    // Also handle scroll events for more responsive updates
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                // Re-check all sections on scroll
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const viewportHeight = window.innerHeight;
+                    const sectionCenter = rect.top + rect.height / 2;
+                    const viewportCenter = viewportHeight / 2;
+                    const distanceFromCenter = Math.abs(sectionCenter - viewportCenter);
+                    const maxDistance = viewportHeight * 0.5;
+                    const focusIntensity = Math.max(0, Math.min(1, 1 - (distanceFromCenter / maxDistance)));
+                    
+                    // Check if section is in viewport
+                    const isInView = rect.top < viewportHeight && rect.bottom > 0;
+                    
+                    if (isInView && focusIntensity > 0.15) {
+                        section.classList.add('scroll-focused');
+                    } else {
+                        section.classList.remove('scroll-focused');
+                    }
+                });
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+});
+
+// Mission Control - Sequential Widget Animation & Screen Time
+document.addEventListener('DOMContentLoaded', () => {
+    const dashboardWidgets = document.querySelectorAll('.dashboard-widget');
+    
+    if (!dashboardWidgets.length) return;
+    
+    const observerOptions = {
+        root: null,
+        rootMargin: '-10% 0px -10% 0px',
+        threshold: 0.2
+    };
+    
+    const observerCallback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                dashboardWidgets.forEach((widget, index) => {
+                    setTimeout(() => {
+                        widget.classList.add('visible');
+                    }, index * 100);
+                });
+                observer.disconnect();
+            }
+        });
+    };
+    
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const missionControlSection = document.querySelector('.mission-control-section');
+    
+    if (missionControlSection) {
+        observer.observe(missionControlSection);
+    }
+    
+    // Update screen time
+    const screenTimeElement = document.getElementById('screenTime');
+    if (screenTimeElement) {
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            screenTimeElement.textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+    }
+    
+    // Add click interaction to widgets
+    dashboardWidgets.forEach(widget => {
+        widget.addEventListener('click', function() {
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        });
+    });
+});
+
+// Selected Work - Fade In Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const workCards = document.querySelectorAll('.work-card');
+    
+    if (!workCards.length) return;
+    
+    const observerOptions = {
+        root: null,
+        rootMargin: '-10% 0px -10% 0px',
+        threshold: 0.2
+    };
+    
+    const observerCallback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                workCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 150);
+                });
+                observer.disconnect();
+            }
+        });
+    };
+    
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const selectedWorkSection = document.querySelector('.selected-work-section');
+    
+    if (selectedWorkSection) {
+        observer.observe(selectedWorkSection);
+    }
+});
+
+// FAQ Accordion
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const faqItem = this.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't already active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
+});
+
 
