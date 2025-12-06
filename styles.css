@@ -1282,7 +1282,7 @@ body.content-loaded > *:not(.loading-screen) {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 120px 0 4rem;
+    padding: 180px 0 4rem;
     overflow: hidden;
     background: transparent;
 }
@@ -7802,8 +7802,8 @@ section::after {
 /* Responsive Design */
 @media (max-width: 968px) {
     .hero {
-        padding-top: 140px !important;
-        padding: 140px 0 4rem !important;
+        padding-top: 180px !important;
+        padding: 180px 0 4rem !important;
     }
     
     .hero-content {
