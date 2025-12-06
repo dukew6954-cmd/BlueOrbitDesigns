@@ -484,13 +484,17 @@ section:not(.hero) > *:not(::before):not(::after) {
 
 @media (max-width: 968px) {
     .mission-control-section {
-        padding-top: 8rem !important;
+        padding-top: 12rem !important;
         padding-bottom: 6rem !important;
     }
     
+    .mission-control-section .container {
+        padding: 0 1.5rem !important;
+    }
+    
     .mission-control-section .section-header {
-        margin-top: 2rem;
-        padding-top: 2rem;
+        margin-top: 3rem !important;
+        padding-top: 3rem !important;
     }
     
     .monitor-frame {
@@ -8315,8 +8319,14 @@ section::after {
         padding: 4rem 0;
     }
     
-    .mission-control-section,
-    .process-section,
+    .mission-control-section {
+        padding-top: 12rem !important;
+    }
+    
+    .process-section {
+        padding-top: 12rem !important;
+    }
+    
     .selected-work-section,
     .who-we-work-section,
     .reviews-section,
@@ -8332,8 +8342,8 @@ section::after {
     
     .mission-control-section .section-header,
     .process-section .section-header {
-        margin-top: 2rem;
-        padding-top: 2rem;
+        margin-top: 3rem !important;
+        padding-top: 3rem !important;
     }
     
     .service-card,
@@ -8405,8 +8415,17 @@ section::after {
     }
     
     .process-section {
-        padding-top: 8rem !important;
+        padding-top: 12rem !important;
         padding-bottom: 6rem !important;
+    }
+    
+    .process-section .section-header {
+        margin-top: 3rem !important;
+        padding-top: 3rem !important;
+    }
+    
+    .process-section .container {
+        padding: 0 1.5rem !important;
     }
     
     .process-tabs-container {
@@ -8420,6 +8439,7 @@ section::after {
         overflow-y: visible;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
+        scroll-padding: 0 2rem;
     }
     
     .process-circle-wrapper {
@@ -8428,6 +8448,7 @@ section::after {
         overflow: visible;
         min-width: max-content;
         justify-content: flex-start;
+        display: flex;
     }
     
     .process-circle {
@@ -8440,10 +8461,12 @@ section::after {
     .circle-label {
         font-size: 0.7rem;
         margin-top: 0.5rem;
+        white-space: nowrap;
     }
     
     .orbital-line {
         min-width: 40px;
+        flex-shrink: 0;
     }
     
     .circle-number {
