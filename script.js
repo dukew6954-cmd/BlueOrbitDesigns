@@ -64,11 +64,22 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 
+// Function to update mobile menu position based on navbar height
+function updateMobileMenuPosition() {
+    if (navMenu && navbar && window.innerWidth <= 968) {
+        const navbarHeight = navbar.offsetHeight;
+        navMenu.style.setProperty('top', navbarHeight + 'px', 'important');
+        navMenu.style.setProperty('height', `calc(100vh - ${navbarHeight}px)`, 'important');
+    }
+}
+
 if (hamburger && navMenu) {
     hamburger.addEventListener('click', (e) => {
         e.stopPropagation();
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        // Update position when menu opens
+        updateMobileMenuPosition();
     });
 
     // Function to close menu and all dropdowns
@@ -101,8 +112,15 @@ if (hamburger && navMenu) {
     window.addEventListener('resize', () => {
         if (window.innerWidth > 968 && navMenu.classList.contains('active')) {
             closeMobileMenu();
+        } else {
+            // Update position on resize
+            updateMobileMenuPosition();
         }
     });
+    
+    // Update position on load and when navbar height changes
+    updateMobileMenuPosition();
+    window.addEventListener('load', updateMobileMenuPosition);
 }
 
 // Dropdown Toggle for Mobile
