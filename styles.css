@@ -483,6 +483,16 @@ section:not(.hero) > *:not(::before):not(::after) {
 }
 
 @media (max-width: 968px) {
+    .mission-control-section {
+        padding-top: 8rem !important;
+        padding-bottom: 6rem !important;
+    }
+    
+    .mission-control-section .section-header {
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+    
     .monitor-frame {
         padding: 1rem;
         margin: 2rem auto 0;
@@ -5377,6 +5387,47 @@ section::after {
 }
 
 @media (max-width: 480px) {
+    .mission-control-section {
+        padding-top: 10rem !important;
+    }
+    
+    .mission-control-section .section-header {
+        margin-top: 3rem;
+        padding-top: 3rem;
+    }
+    
+    .process-section {
+        padding-top: 10rem !important;
+    }
+    
+    .process-section .section-header {
+        margin-top: 3rem;
+        padding-top: 3rem;
+    }
+    
+    .process-circle {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .process-circle-wrapper {
+        gap: 0.5rem;
+        padding: 0 1.5rem 2rem;
+    }
+    
+    .orbital-line {
+        min-width: 30px;
+    }
+    
+    .circle-label {
+        font-size: 0.65rem;
+    }
+    
+    .monitor-frame {
+        width: calc(100% - 0.5rem);
+        padding: 0.75rem;
+    }
+    
     .who-we-work-section .container {
         padding: 0 1.5rem;
     }
@@ -8150,7 +8201,23 @@ section::after {
     
     /* Mission Control Mobile */
     .mission-control-section {
-        padding: 6rem 0 !important;
+        padding-top: 10rem !important;
+        padding-bottom: 6rem !important;
+    }
+    
+    .mission-control-section .section-header {
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+    
+    .mission-control-section .container {
+        padding: 0 1.5rem;
+    }
+    
+    .monitor-frame {
+        width: calc(100% - 1rem);
+        margin: 2rem auto 0;
+        padding: 1rem;
     }
     
     .mission-control-dashboard {
@@ -8248,6 +8315,27 @@ section::after {
         padding: 4rem 0;
     }
     
+    .mission-control-section,
+    .process-section,
+    .selected-work-section,
+    .who-we-work-section,
+    .reviews-section,
+    .tech-stack-section,
+    .cta-section {
+        padding-top: 8rem !important;
+    }
+    
+    .section-header {
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+    
+    .mission-control-section .section-header,
+    .process-section .section-header {
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+    
     .service-card,
     .service-card-enhanced,
     .review-card,
@@ -8316,35 +8404,62 @@ section::after {
         grid-template-columns: 1fr;
     }
     
+    .process-section {
+        padding-top: 8rem !important;
+        padding-bottom: 6rem !important;
+    }
+    
+    .process-tabs-container {
+        margin-top: 3rem;
+    }
+    
     .process-timeline {
         margin-bottom: 2rem;
         padding: 1rem 0 3rem;
+        overflow-x: auto;
         overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
     }
     
     .process-circle-wrapper {
-        gap: 0.5rem;
-        padding: 0 1rem 2.5rem;
+        gap: 0.75rem;
+        padding: 0 2rem 2.5rem;
         overflow: visible;
+        min-width: max-content;
+        justify-content: flex-start;
     }
     
     .process-circle {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+    }
+    
+    .circle-label {
+        font-size: 0.7rem;
+        margin-top: 0.5rem;
+    }
+    
+    .orbital-line {
+        min-width: 40px;
     }
     
     .circle-number {
         font-size: 0.625rem;
     }
     
-    .circle-label {
-        font-size: 0.75rem;
-        top: calc(100% + 0.75rem);
+    .process-content-wrapper {
+        min-height: 300px;
     }
     
-    .orbital-line {
-        max-width: 60px;
-        height: 1.5px;
+    .process-content {
+        padding: 0 1rem;
+    }
+    
+    .process-step {
+        padding: 2rem 1.5rem;
     }
     
     .process-content-wrapper {
