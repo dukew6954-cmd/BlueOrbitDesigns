@@ -4287,6 +4287,16 @@ section::after {
     gap: 2rem;
     animation: slideReviews 30s linear infinite;
     width: fit-content;
+    will-change: transform;
+}
+
+.reviews-track.paused {
+    animation-play-state: paused;
+}
+
+.reviews-track.user-scrolling {
+    animation: none;
+    transition: transform 0.1s ease-out;
 }
 
 @keyframes slideReviews {
@@ -6973,10 +6983,16 @@ section::after {
         padding: 0 0.5rem;
     }
     
-    /* Reviews Mobile - Keep auto-animation */
+    /* Reviews Mobile - Touch controls */
     .reviews-slider {
         overflow-x: hidden;
         padding: 2rem 0;
+        touch-action: pan-y pinch-zoom;
+    }
+    
+    .reviews-track {
+        touch-action: pan-x;
+        -webkit-overflow-scrolling: touch;
     }
     
     .review-card {
@@ -6984,6 +7000,7 @@ section::after {
         max-width: calc(100vw - 4rem);
         transform: none;
         margin: 0 1rem;
+        flex-shrink: 0;
     }
     
     .review-card:nth-child(even),

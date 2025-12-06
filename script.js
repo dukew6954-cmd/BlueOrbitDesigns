@@ -729,4 +729,140 @@ document.head.appendChild(style);
 
 console.log('BlueOrbit Designs website loaded successfully! 🚀');
 
+// Reviews Section - Mobile Touch Controls
+document.addEventListener('DOMContentLoaded', () => {
+    const reviewsTrack = document.querySelector('.reviews-track');
+    
+    if (!reviewsTrack) return;
+    
+    // Only enable on mobile
+    const isMobile = () => window.innerWidth <= 968;
+    
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let initialTransformX = 0;
+    let isTouching = false;
+    let isSwiping = false;
+    let resumeTimeout = null;
+    let animationStartTime = 0;
+    let animationStartX = 0;
+    
+    // Get current transform X value
+    const getTransformX = () => {
+        const style = window.getComputedStyle(reviewsTrack);
+        const transform = style.transform;
+        if (transform === 'none') return 0;
+        const matrix = new DOMMatrix(transform);
+        return matrix.m41;
+    };
+    
+    // Pause animation and capture current position
+    const pauseAnimation = () => {
+        if (isTouching) return;
+        
+        isTouching = true;
+        initialTransformX = getTransformX();
+        animationStartX = initialTransformX;
+        animationStartTime = Date.now();
+        reviewsTrack.classList.add('paused');
+    };
+    
+    // Resume animation
+    const resumeAnimation = (delay = 1000) => {
+        if (resumeTimeout) {
+            clearTimeout(resumeTimeout);
+        }
+        
+        resumeTimeout = setTimeout(() => {
+            if (!isTouching) {
+                const currentX = getTransformX();
+                
+                // Remove manual classes and styles
+                reviewsTrack.classList.remove('paused', 'user-scrolling');
+                reviewsTrack.style.transform = '';
+                reviewsTrack.style.transition = '';
+                
+                // The animation will continue from where it naturally is
+                // We just let it resume normally
+            }
+        }, delay);
+    };
+    
+    // Touch start
+    reviewsTrack.addEventListener('touchstart', (e) => {
+        if (!isMobile()) return;
+        
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        isSwiping = false;
+        
+        pauseAnimation();
+    }, { passive: true });
+    
+    // Touch move
+    reviewsTrack.addEventListener('touchmove', (e) => {
+        if (!isMobile() || !isTouching) return;
+        
+        const touchX = e.touches[0].clientX;
+        const touchY = e.touches[0].clientY;
+        
+        const deltaX = touchX - touchStartX;
+        const deltaY = touchY - touchStartY;
+        
+        // Determine if this is a horizontal swipe
+        if (!isSwiping) {
+            isSwiping = Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10;
+        }
+        
+        if (isSwiping) {
+            // Prevent default to stop page scroll
+            e.preventDefault();
+            
+            reviewsTrack.classList.add('user-scrolling');
+            
+            // Calculate new position based on initial position and swipe distance
+            const newX = initialTransformX + deltaX;
+            reviewsTrack.style.transform = `translateX(${newX}px)`;
+        }
+    }, { passive: false });
+    
+    // Touch end
+    reviewsTrack.addEventListener('touchend', () => {
+        if (!isMobile() || !isTouching) return;
+        
+        isTouching = false;
+        
+        if (isSwiping) {
+            // User was swiping - resume after a short delay
+            resumeAnimation(800);
+        } else {
+            // User was just holding - resume quickly
+            resumeAnimation(300);
+        }
+        
+        isSwiping = false;
+    }, { passive: true });
+    
+    // Touch cancel
+    reviewsTrack.addEventListener('touchcancel', () => {
+        if (!isMobile()) return;
+        
+        isTouching = false;
+        isSwiping = false;
+        resumeAnimation(500);
+    }, { passive: true });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        if (!isMobile()) {
+            reviewsTrack.classList.remove('paused', 'user-scrolling');
+            reviewsTrack.style.transform = '';
+            reviewsTrack.style.transition = '';
+            if (resumeTimeout) {
+                clearTimeout(resumeTimeout);
+            }
+        }
+    });
+});
+
 
