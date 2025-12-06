@@ -716,13 +716,13 @@ body.content-loaded > *:not(.loading-screen) {
 
 /* Hero Section */
 .hero {
-    padding-top: 0; /* Logo overlaps bottom, no extra padding needed */
+    padding-top: 180px; /* Add gap from navbar */
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 150px 0 4rem;
+    padding: 180px 0 4rem;
     overflow: hidden;
     background: transparent;
 }
