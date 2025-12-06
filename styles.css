@@ -651,35 +651,67 @@ body.content-loaded > *:not(.loading-screen) {
 .hamburger {
     display: none;
     flex-direction: column;
-    gap: 6px;
+    gap: 7px;
     cursor: pointer;
-    padding: 0.75rem;
-    min-width: 50px;
-    min-height: 50px;
+    padding: 0.875rem;
+    width: 56px;
+    height: 56px;
     justify-content: center;
     align-items: center;
     z-index: 99999;
-    background: rgba(0, 212, 255, 0.1);
-    border: 2px solid rgba(0, 212, 255, 0.3);
-    border-radius: 12px;
-    transition: all 0.3s ease;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%);
+    border: 3px solid var(--primary-color);
+    border-radius: 14px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     position: relative;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
 }
 
-.hamburger:hover {
-    background: rgba(0, 212, 255, 0.2);
-    border-color: rgba(0, 212, 255, 0.5);
-    transform: scale(1.05);
+.hamburger:active {
+    transform: scale(0.92);
+    box-shadow: 0 2px 8px rgba(0, 212, 255, 0.2);
+}
+
+.hamburger::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(0, 212, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+    pointer-events: none;
+}
+
+.hamburger:active::before {
+    width: 100px;
+    height: 100px;
 }
 
 .hamburger span {
-    width: 28px;
-    height: 3px;
+    width: 30px;
+    height: 4px;
     background: var(--primary-color);
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    border-radius: 3px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-radius: 4px;
     display: block;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.hamburger span::before,
+.hamburger span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 4px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 /* Hero Section */
@@ -6347,26 +6379,32 @@ section::after {
     .hamburger {
         display: flex;
         z-index: 99999;
+        order: 2;
     }
     
     .hamburger.active {
-        background: rgba(0, 212, 255, 0.2);
-        border-color: var(--primary-color);
+        background: linear-gradient(135deg, rgba(0, 212, 255, 0.3) 0%, rgba(99, 102, 241, 0.3) 100%);
+        border-color: var(--accent-color);
+        box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+        transform: scale(1.05);
     }
     
     .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(9px, 9px);
-        background: var(--primary-color);
+        transform: rotate(45deg) translate(10px, 10px);
+        background: var(--accent-color);
+        box-shadow: 0 2px 8px rgba(255, 215, 0, 0.6);
     }
     
     .hamburger.active span:nth-child(2) {
         opacity: 0;
-        transform: translateX(-20px);
+        transform: translateX(-30px) scale(0);
+        width: 0;
     }
     
     .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(9px, -9px);
-        background: var(--primary-color);
+        transform: rotate(-45deg) translate(10px, -10px);
+        background: var(--accent-color);
+        box-shadow: 0 2px 8px rgba(255, 215, 0, 0.6);
     }
     
     /* Additional Mobile Improvements */
@@ -6414,13 +6452,19 @@ section::after {
     }
     
     .hamburger {
-        min-width: 45px;
-        min-height: 45px;
-        padding: 0.625rem;
+        width: 52px;
+        height: 52px;
+        padding: 0.75rem;
+        border-width: 2.5px;
     }
     
     .hamburger span {
-        width: 24px;
+        width: 28px;
+        height: 3.5px;
+    }
+    
+    .hamburger.active {
+        transform: scale(1.02);
     }
     
     .hero {
@@ -6552,11 +6596,26 @@ section::after {
         height: 100px !important;
         max-height: 100px !important;
         padding: 0 1.5rem !important;
+        justify-content: space-between !important;
+    }
+    
+    #navbar .logo {
+        flex: 0 0 auto;
+        order: 1;
     }
     
     #navbar .logo img {
         height: 120px !important;
         max-width: 200px !important;
+    }
+    
+    #navbar .nav-menu {
+        order: 3;
+    }
+    
+    #navbar .hamburger {
+        order: 2;
+        margin-left: auto;
     }
     
     .nav-menu {
