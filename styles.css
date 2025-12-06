@@ -4276,76 +4276,10 @@ section::after {
 
 .reviews-slider {
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
     margin-top: 4rem;
     position: relative;
     padding: 3rem 0;
-}
-
-/* Review Navigation Buttons */
-.review-nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 212, 255, 0.2);
-    border: 2px solid var(--primary-color);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-    color: var(--primary-color);
-    opacity: 0;
-    pointer-events: none;
-}
-
-.review-prev {
-    left: 1rem;
-}
-
-.review-next {
-    right: 1rem;
-}
-
-.review-nav-btn:hover {
-    background: rgba(0, 212, 255, 0.4);
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-    transform: translateY(-50%) scale(1.1);
-}
-
-.review-nav-btn svg {
-    width: 24px;
-    height: 24px;
-}
-
-/* Review Dots */
-.review-dots {
-    display: none;
-    justify-content: center;
-    gap: 0.75rem;
-    margin-top: 2rem;
-    padding: 0 1rem;
-}
-
-.review-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    border: 2px solid var(--primary-color);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.review-dot.active {
-    background: var(--primary-color);
-    border-color: var(--accent-color);
-    transform: scale(1.2);
 }
 
 .reviews-track {
@@ -7039,25 +6973,10 @@ section::after {
         padding: 0 0.5rem;
     }
     
-    /* Reviews Mobile Controls */
+    /* Reviews Mobile - Keep auto-animation */
     .reviews-slider {
-        overflow: hidden;
+        overflow-x: hidden;
         padding: 2rem 0;
-    }
-    
-    .reviews-track {
-        animation: none;
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .review-nav-btn {
-        opacity: 1 !important;
-        pointer-events: auto !important;
-        display: flex !important;
-    }
-    
-    .review-dots {
-        display: flex !important;
     }
     
     .review-card {
