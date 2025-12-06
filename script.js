@@ -246,6 +246,117 @@ function updateActiveNavLink() {
 // Run on page load
 updateActiveNavLink();
 
+// Mobile Touch Controls for Reviews Section
+document.addEventListener('DOMContentLoaded', () => {
+    // Only enable on mobile
+    if (window.innerWidth <= 968) {
+        const reviewsSection = document.querySelector('.reviews-section');
+        const reviewsTrack = document.querySelector('.reviews-track');
+        
+        if (reviewsSection && reviewsTrack) {
+            let isTouching = false;
+            let touchStartX = 0;
+            let touchStartY = 0;
+            let currentTranslate = 0;
+            let animationPaused = false;
+            let touchStartTime = 0;
+            
+            // Stop animation on touch
+            function pauseAnimation() {
+                if (!animationPaused) {
+                    reviewsTrack.style.animationPlayState = 'paused';
+                    animationPaused = true;
+                }
+            }
+            
+            // Touch start
+            reviewsSection.addEventListener('touchstart', (e) => {
+                isTouching = true;
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+                touchStartTime = Date.now();
+                pauseAnimation();
+                
+                // Get current transform value from animation
+                const computedStyle = window.getComputedStyle(reviewsTrack);
+                const matrix = computedStyle.transform;
+                if (matrix && matrix !== 'none') {
+                    const values = matrix.split('(')[1].split(')')[0].split(',');
+                    currentTranslate = parseFloat(values[4]) || 0;
+                } else {
+                    currentTranslate = 0;
+                }
+            }, { passive: true });
+            
+            // Touch move - handle swipe
+            reviewsSection.addEventListener('touchmove', (e) => {
+                if (!isTouching) return;
+                
+                const touchX = e.touches[0].clientX;
+                const touchY = e.touches[0].clientY;
+                const deltaX = touchX - touchStartX;
+                const deltaY = touchY - touchStartY;
+                
+                // Only handle horizontal swipes (more horizontal than vertical)
+                if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
+                    e.preventDefault();
+                    
+                    // Calculate new translate value
+                    const newTranslate = currentTranslate + deltaX;
+                    
+                    // Apply transform
+                    reviewsTrack.style.transform = `translateX(${newTranslate}px)`;
+                    reviewsTrack.style.transition = 'none';
+                }
+            }, { passive: false });
+            
+            // Touch end - snap to nearest card or continue swipe
+            reviewsSection.addEventListener('touchend', (e) => {
+                if (!isTouching) return;
+                
+                isTouching = false;
+                const touchEndX = e.changedTouches[0].clientX;
+                const touchEndY = e.changedTouches[0].clientY;
+                const deltaX = touchEndX - touchStartX;
+                const deltaY = touchEndY - touchStartY;
+                const deltaTime = Date.now() - touchStartTime;
+                
+                // Determine if it's a swipe (fast horizontal movement)
+                const isSwipe = Math.abs(deltaX) > Math.abs(deltaY) && 
+                               Math.abs(deltaX) > 50 && 
+                               deltaTime < 300;
+                
+                if (isSwipe) {
+                    // Calculate swipe direction and distance
+                    const cardWidth = 400; // min-width of review-card
+                    const gap = 32; // gap between cards (2rem = 32px)
+                    const cardWithGap = cardWidth + gap;
+                    
+                    // Determine swipe direction
+                    if (deltaX > 0) {
+                        // Swipe right - move to previous card
+                        currentTranslate += cardWithGap;
+                    } else {
+                        // Swipe left - move to next card
+                        currentTranslate -= cardWithGap;
+                    }
+                    
+                    // Apply smooth transition
+                    reviewsTrack.style.transition = 'transform 0.3s ease-out';
+                    reviewsTrack.style.transform = `translateX(${currentTranslate}px)`;
+                } else {
+                    // Not a swipe, just restore position
+                    reviewsTrack.style.transition = 'transform 0.3s ease-out';
+                    reviewsTrack.style.transform = `translateX(${currentTranslate}px)`;
+                }
+                
+                // Keep animation paused after touch
+                pauseAnimation();
+            }, { passive: true });
+        }
+    }
+});
+
 // Smooth Scroll for Anchor Links (for same-page anchors)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
