@@ -6185,6 +6185,49 @@ section::after {
         margin-bottom: 2rem;
     }
     
+    /* About Page Mobile Styles */
+    .process-steps {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        margin-top: 3rem !important;
+    }
+    
+    .process-step {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    /* Mission & Vision Section - Mobile */
+    .services-preview > .container > div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        margin-top: 2rem !important;
+    }
+    
+    /* Why BlueOrbit & Technology Focus - Mobile */
+    .services-preview > .container > div[style*="grid-template-columns: repeat(2, 1fr)"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        margin-top: 2rem !important;
+    }
+    
+    /* Text adjustments for mobile */
+    .services-preview p {
+        font-size: clamp(0.95rem, 2.5vw, 1.15rem) !important;
+        padding: 0 1rem;
+    }
+    
+    .service-card {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    .service-card h3 {
+        font-size: clamp(1.25rem, 4vw, 1.75rem) !important;
+    }
+    
+    .service-card p {
+        font-size: clamp(0.9rem, 2.5vw, 1rem) !important;
+    }
+    
     .hero-lottie-container {
         max-width: 100%;
         height: 300px;
@@ -6654,17 +6697,85 @@ section::after {
     }
     
     .process-steps {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        padding: 0 1rem;
     }
     
     .process-steps::before {
         display: none;
     }
     
+    .process-step {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    /* About Page - Mission & Vision Section Mobile */
     section[style*="grid-template-columns: 1fr 1fr"] {
         grid-template-columns: 1fr !important;
         gap: 2rem !important;
+        padding: 0 1rem !important;
+    }
+    
+    /* About Page - Why BlueOrbit & Technology Focus Mobile */
+    div[style*="grid-template-columns: repeat(2, 1fr)"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 0 1rem !important;
+    }
+    
+    /* About Page - Text adjustments for mobile */
+    .services-preview p[style*="font-size: 1.15rem"] {
+        font-size: clamp(0.95rem, 2.5vw, 1.15rem) !important;
+        padding: 0 1rem !important;
+        line-height: 1.7 !important;
+    }
+    
+    .service-card {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    .service-card h3[style*="font-size: 1.75rem"] {
+        font-size: clamp(1.25rem, 4vw, 1.75rem) !important;
+    }
+    
+    .service-card p[style*="font-size: 1rem"] {
+        font-size: clamp(0.9rem, 2.5vw, 1rem) !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* About Page - Section spacing for mobile */
+    .services-preview {
+        padding: 4rem 0 !important;
+    }
+    
+    .services-preview .container {
+        padding: 0 1.5rem !important;
+    }
+    
+    .section-header {
+        margin-bottom: 2rem !important;
+    }
+    
+    .section-title {
+        font-size: clamp(1.75rem, 6vw, 2.5rem) !important;
+    }
+    
+    .section-label {
+        font-size: clamp(0.85rem, 2vw, 1rem) !important;
+    }
+    
+    /* About Page - Step numbers mobile */
+    .step-number {
+        font-size: clamp(2rem, 8vw, 3rem) !important;
+    }
+    
+    .process-step h3 {
+        font-size: clamp(1.1rem, 3vw, 1.5rem) !important;
+    }
+    
+    .process-step p {
+        font-size: clamp(0.9rem, 2.5vw, 1rem) !important;
     }
 }
 
