@@ -3,6 +3,32 @@
 const navbar = document.getElementById('navbar');
 let lastScroll = 0;
 
+// Force scroll to top on page load/reload
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// Scroll to top immediately on load
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+});
+
+// Also scroll to top on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+});
+
+// Scroll to top immediately if page is already loaded
+if (document.readyState === 'complete') {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+}
+
 // Ensure navbar stays fixed - run on load and continuously
 function ensureNavbarFixed() {
     if (navbar) {
