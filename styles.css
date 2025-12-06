@@ -483,20 +483,18 @@ section:not(.hero) > *:not(::before):not(::after) {
 }
 
 @media (max-width: 968px) {
-    .mission-control-section {
-        padding: 12rem 0 6rem 0 !important;
+    body .mission-control-section {
+        padding-top: 12rem !important;
+        padding-bottom: 6rem !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
     
-    .mission-control-section .container {
+    body .mission-control-section .container {
         padding: 0 1.5rem !important;
     }
     
-    .mission-control-section .section-header {
-        margin-top: 3rem !important;
-        padding-top: 3rem !important;
-    }
-    
-    .mission-control-section .section-header {
+    body     body .mission-control-section .section-header {
         margin-top: 3rem !important;
         padding-top: 3rem !important;
     }
@@ -5395,34 +5393,26 @@ section::after {
 }
 
 @media (max-width: 480px) {
-    .mission-control-section {
-        padding: 12rem 0 6rem 0 !important;
+    body .mission-control-section {
+        padding-top: 12rem !important;
+        padding-bottom: 6rem !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
     
-    .mission-control-section .section-header {
+    body .mission-control-section .section-header {
         margin-top: 3rem !important;
         padding-top: 3rem !important;
     }
     
-    .process-section {
-        padding: 12rem 0 6rem 0 !important;
+    body .process-section {
+        padding-top: 12rem !important;
+        padding-bottom: 6rem !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
     
-    .process-section .section-header {
-        margin-top: 3rem !important;
-        padding-top: 3rem !important;
-    }
-    
-    .mission-control-section .section-header {
-        margin-top: 3rem !important;
-        padding-top: 3rem !important;
-    }
-    
-    .process-section {
-        padding: 12rem 0 6rem 0 !important;
-    }
-    
-    .process-section .section-header {
+    body .process-section .section-header {
         margin-top: 3rem !important;
         padding-top: 3rem !important;
     }
@@ -8341,16 +8331,19 @@ section::after {
         padding: 12rem 0 6rem 0 !important;
     }
     
-    .mission-control-section .section-header {
+    body .mission-control-section .section-header {
         margin-top: 3rem !important;
         padding-top: 3rem !important;
     }
     
-    .process-section {
-        padding: 12rem 0 6rem 0 !important;
+    body .process-section {
+        padding-top: 12rem !important;
+        padding-bottom: 6rem !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
     
-    .process-section .section-header {
+    body .process-section .section-header {
         margin-top: 3rem !important;
         padding-top: 3rem !important;
     }
@@ -8436,16 +8429,19 @@ section::after {
         grid-template-columns: 1fr;
     }
     
-    .process-section {
-        padding: 12rem 0 6rem 0 !important;
+    body .process-section {
+        padding-top: 12rem !important;
+        padding-bottom: 6rem !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
     
-    .process-section .section-header {
+    body .process-section .section-header {
         margin-top: 3rem !important;
         padding-top: 3rem !important;
     }
     
-    .process-section .container {
+    body .process-section .container {
         padding: 0 1.5rem !important;
     }
     
