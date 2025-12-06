@@ -6270,20 +6270,20 @@ section::after {
         padding: 2rem 1.5rem;
     }
     
-    /* Navbar Mobile Menu - Clean Redesign */
+    /* Navbar Mobile Menu - Full Screen Redesign */
     .nav-menu {
         position: fixed;
-        top: 100px;
+        top: 0;
         left: -100%;
         flex-direction: column;
         background: rgba(10, 10, 26, 0.98);
         backdrop-filter: blur(40px);
         width: 100%;
-        padding: 1.5rem 0;
-        border-top: 2px solid rgba(0, 212, 255, 0.2);
+        height: 100vh;
+        padding: 120px 0 2rem;
+        border-top: none;
         transition: left 0.3s ease;
         z-index: 99998;
-        max-height: calc(100vh - 100px);
         overflow-y: auto;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
     }

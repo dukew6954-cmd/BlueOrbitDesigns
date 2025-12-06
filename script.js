@@ -108,11 +108,11 @@ if (hamburger && navMenu) {
 // Dropdown Toggle for Mobile
 document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
     toggle.addEventListener('click', (e) => {
+        // Always prevent default on mobile, only toggle dropdown
         if (window.innerWidth <= 968) {
             e.preventDefault();
             e.stopPropagation();
             const dropdown = toggle.parentElement;
-            const isActive = dropdown.classList.contains('active');
             
             // Close all other dropdowns
             document.querySelectorAll('.nav-dropdown').forEach(dd => {
