@@ -6415,10 +6415,10 @@ section::after {
         padding: 0.75rem 2rem 0.75rem 3.5rem;
         display: block;
         border-radius: 0;
-        background: transparent;
+        background: transparent !important;
         border: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        color: rgba(255, 255, 255, 0.7);
+        color: #fff !important;
         font-size: 0.9rem;
         font-weight: 700;
         transition: color 0.2s ease;
@@ -6431,19 +6431,11 @@ section::after {
     
     .dropdown-link:hover,
     .dropdown-link.active {
-        background: transparent;
+        background: transparent !important;
         border-color: rgba(255, 255, 255, 0.05);
-        color: #fff;
-        transform: none;
-        box-shadow: none;
-    }
-
-    .dropdown-link:hover,
-    .dropdown-link.active {
+        color: #fff !important;
         transform: none !important;
-        background: rgba(0, 212, 255, 0.1);
-        color: var(--primary-color);
-        padding-left: 3.5rem;
+        box-shadow: none;
     }
     
     .hamburger {
