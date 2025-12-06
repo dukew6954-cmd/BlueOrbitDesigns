@@ -6273,13 +6273,13 @@ section::after {
     /* Navbar Mobile Menu - Clean Tesla-style Design */
     .nav-menu {
         position: fixed;
-        top: 125px;
+        top: 140px;
         left: -100%;
         flex-direction: column;
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(20px);
         width: 100%;
-        height: calc(100vh - 125px);
+        height: calc(100vh - 140px);
         padding: 0;
         border-top: 1px solid rgba(0, 0, 0, 0.08);
         transition: left 0.3s ease;
@@ -6318,6 +6318,7 @@ section::after {
         display: block;
         position: relative;
         box-shadow: none;
+        text-shadow: none;
         text-transform: none;
         letter-spacing: 0;
         transform: none;
@@ -6356,6 +6357,7 @@ section::after {
         font-size: 1rem;
         font-weight: 700;
         color: #000;
+        text-shadow: none;
         transform: none;
     }
     
@@ -6422,6 +6424,7 @@ section::after {
         transition: color 0.2s ease;
         text-align: left;
         box-shadow: none;
+        text-shadow: none;
         text-transform: none;
         letter-spacing: 0;
     }
