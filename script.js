@@ -94,8 +94,11 @@ if (hamburger && navMenu) {
     
     // Close menu when clicking on a link (but not dropdown toggle)
     document.querySelectorAll('.nav-link:not(.dropdown-toggle), .dropdown-link').forEach(link => {
-        link.addEventListener('click', () => {
-            closeMobileMenu();
+        link.addEventListener('click', (e) => {
+            // Only close menu if not a dropdown toggle
+            if (!link.classList.contains('dropdown-toggle')) {
+                closeMobileMenu();
+            }
         });
     });
     
@@ -126,11 +129,33 @@ if (hamburger && navMenu) {
 // Dropdown Toggle for Mobile
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+        // Store original href
+        const originalHref = toggle.getAttribute('href');
+        
+        // Remove href on mobile to prevent navigation
+        function updateHref() {
+            if (window.innerWidth <= 968) {
+                toggle.setAttribute('href', '#');
+                toggle.style.cursor = 'pointer';
+            } else {
+                if (originalHref) {
+                    toggle.setAttribute('href', originalHref);
+                }
+            }
+        }
+        
+        // Update on load and resize
+        updateHref();
+        window.addEventListener('resize', updateHref);
+        
+        // Use capture phase to ensure this runs first
         toggle.addEventListener('click', (e) => {
             // Always prevent default on mobile, only toggle dropdown
             if (window.innerWidth <= 968) {
                 e.preventDefault();
                 e.stopPropagation();
+                e.stopImmediatePropagation();
+                
                 const dropdown = toggle.closest('.nav-dropdown');
                 
                 if (dropdown) {
@@ -144,8 +169,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Toggle current dropdown
                     dropdown.classList.toggle('active');
                 }
+                
+                return false;
             }
-        });
+        }, true); // Use capture phase
     });
 });
 
