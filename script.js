@@ -71,11 +71,20 @@ if (hamburger && navMenu) {
         navMenu.classList.toggle('active');
     });
 
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-link, .dropdown-link').forEach(link => {
+    // Function to close menu and all dropdowns
+    function closeMobileMenu() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        // Close all dropdowns
+        document.querySelectorAll('.nav-dropdown').forEach(dd => {
+            dd.classList.remove('active');
+        });
+    }
+    
+    // Close menu when clicking on a link (but not dropdown toggle)
+    document.querySelectorAll('.nav-link:not(.dropdown-toggle), .dropdown-link').forEach(link => {
         link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            closeMobileMenu();
         });
     });
     
@@ -84,16 +93,14 @@ if (hamburger && navMenu) {
         if (navMenu.classList.contains('active') && 
             !navMenu.contains(e.target) && 
             !hamburger.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            closeMobileMenu();
         }
     });
     
     // Close menu on window resize if it becomes desktop size
     window.addEventListener('resize', () => {
         if (window.innerWidth > 968 && navMenu.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            closeMobileMenu();
         }
     });
 }
@@ -103,8 +110,18 @@ document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
     toggle.addEventListener('click', (e) => {
         if (window.innerWidth <= 968) {
             e.preventDefault();
+            e.stopPropagation();
             const dropdown = toggle.parentElement;
-            const menu = dropdown.querySelector('.dropdown-menu');
+            const isActive = dropdown.classList.contains('active');
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.nav-dropdown').forEach(dd => {
+                if (dd !== dropdown) {
+                    dd.classList.remove('active');
+                }
+            });
+            
+            // Toggle current dropdown
             dropdown.classList.toggle('active');
         }
     });
