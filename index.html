@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueOrbit Designs - Web Development, App Development & Internal Systems</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Fixed navbar wrapper - BULLETPROOF */
+        #fixed-nav-wrapper {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            z-index: 99999 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            transform: none !important;
+            will-change: auto !important;
+        }
+        
+        /* Prevent any parent from interfering */
+        html, body {
+            transform: none !important;
+            perspective: none !important;
+            filter: none !important;
+        }
+    </style>
+    <script>
+        // IMMEDIATE execution - before anything else loads
+        (function() {
+            var wrapper = document.getElementById('fixed-nav-wrapper');
+            if (wrapper) {
+                wrapper.style.position = 'fixed';
+                wrapper.style.top = '0';
+                wrapper.style.left = '0';
+                wrapper.style.width = '100%';
+                wrapper.style.zIndex = '99999';
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Comfortaa:wght@300;400;500;600;700&family=Bungee&family=Righteous&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+</head>
+<body>
+    <!-- Starfield Background -->
+    <canvas id="starfield-canvas"></canvas>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0a0a1a; background-image: radial-gradient(ellipse 1200px 800px at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 60%), radial-gradient(ellipse 1000px 700px at 80% 70%, rgba(139, 92, 246, 0.12) 0%, transparent 60%); z-index: 99999; display: flex !important; align-items: center; justify-content: center; opacity: 1 !important; visibility: visible !important;">
+        <div class="loading-content" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+            <dotlottie-wc 
+                src="https://lottie.host/267d628b-ec5b-4b08-98d4-068adf3a31d6/wpugCQpQ9k.lottie" 
+                style="width: 300px; height: 300px; display: block !important; opacity: 1 !important; visibility: visible !important; background: transparent !important; border: none !important;" 
+                autoplay
+                speed="2">
+            </dotlottie-wc>
+        </div>
+    </div>
+
+    <!-- Navigation - Modern Horizontal Design -->
+    <nav id="navbar" class="navbar" style="position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99999 !important; background: rgba(10, 10, 26, 0.95) !important; backdrop-filter: blur(20px) !important; border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important; padding: 0 4rem !important; display: flex !important; align-items: center !important; justify-content: space-between !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; overflow: visible !important; height: 125px !important; max-height: 125px !important;">
+        <!-- Large Logo on Left - Extends Beyond Navbar -->
+        <div class="logo" style="flex-shrink: 0; overflow: visible; position: relative; z-index: 10;">
+            <a href="index.html" style="text-decoration: none; display: flex; align-items: center; overflow: visible;">
+                <img src="Vetern Owned & Operated-2.svg" alt="BlueOrbit Designs - Veteran Owned & Operated" style="height: 180px; width: auto; max-width: 400px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));">
+            </a>
+        </div>
+        
+        <!-- Navigation Links on Right -->
+        <ul class="nav-menu" id="nav-menu" style="display: flex; list-style: none; gap: 2rem; align-items: center; margin: 0; padding: 0;">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li class="nav-dropdown">
+                <a href="services.html" class="nav-link dropdown-toggle">Services <span class="dropdown-arrow">▼</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="services.html" class="dropdown-link">All Services</a></li>
+                    <li><a href="web-development.html" class="dropdown-link">Web Development</a></li>
+                    <li><a href="app-development.html" class="dropdown-link">App Development</a></li>
+                    <li><a href="internal-systems.html" class="dropdown-link">Internal Systems</a></li>
+                </ul>
+            </li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Building the Future</span>
+                    <span class="title-line">of Digital Innovation</span>
+                </h1>
+                <p class="hero-subtitle">
+                    We craft exceptional web applications, mobile apps, and internal systems 
+                    that transform businesses and delight users.
+                </p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    <a href="portfolio.html" class="btn btn-secondary">View Our Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="quote-content">
+            <div class="quote-mark quote-mark-left">"</div>
+            <h2 class="quote-text">
+                <span class="quote-line">Innovation is not about</span>
+                <span class="quote-line">what you create,</span>
+                <span class="quote-line">it's about what you</span>
+                <span class="quote-line quote-accent">enable others to achieve</span>
+            </h2>
+            <div class="quote-mark quote-mark-right">"</div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="services-preview" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What We Do</span>
+                <h2 class="section-title">Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Modern, responsive websites and web applications built with cutting-edge technologies.</p>
+                    <a href="web-development.html" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+                            <line x1="12" y1="18" x2="12" y2="18.01"></line>
+                        </svg>
+                    </div>
+                    <h3>App Development</h3>
+                    <p>Native and cross-platform mobile applications for iOS and Android that users love.</p>
+                    <a href="app-development.html" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+                        </svg>
+                    </div>
+                    <h3>Internal Systems</h3>
+                    <p>Custom enterprise solutions that streamline operations and boost productivity.</p>
+                    <a href="internal-systems.html" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">How We Work</span>
+                <h2 class="section-title">Our Process</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3>Discovery</h3>
+                    <p>We understand your goals, challenges, and requirements through in-depth consultation.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3>Design</h3>
+                    <p>We create wireframes and prototypes that align with your vision and user needs.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3>Development</h3>
+                    <p>Our team builds your solution using best practices and modern technologies.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3>Launch</h3>
+                    <p>We deploy your solution and provide ongoing support to ensure success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What Clients Say</span>
+                <h2 class="section-title">Reviews</h2>
+            </div>
+        </div>
+        <div class="reviews-slider">
+            <div class="reviews-track">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"BlueOrbit Designs transformed our business with an incredible web application. The team was professional and delivered beyond our expectations!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Sarah Johnson</div>
+                            <div class="author-role">CEO, TechStart Inc.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The mobile app they built for us is outstanding. User engagement has increased by 300% since launch!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Michael Chen</div>
+                            <div class="author-role">Founder, AppVenture</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Their internal systems solution streamlined our operations perfectly. Highly recommend BlueOrbit Designs!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Emily Rodriguez</div>
+                            <div class="author-role">Operations Director, Global Corp</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Exceptional service and attention to detail. BlueOrbit Designs delivered exactly what we needed on time and on budget."</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">David Thompson</div>
+                            <div class="author-role">CTO, InnovateNow</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The team at BlueOrbit Designs is incredibly talented. They understood our vision and brought it to life beautifully."</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Lisa Anderson</div>
+                            <div class="author-role">Marketing Director, BrandCo</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Duplicate cards for seamless loop -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"BlueOrbit Designs transformed our business with an incredible web application. The team was professional and delivered beyond our expectations!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Sarah Johnson</div>
+                            <div class="author-role">CEO, TechStart Inc.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The mobile app they built for us is outstanding. User engagement has increased by 300% since launch!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Michael Chen</div>
+                            <div class="author-role">Founder, AppVenture</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Their internal systems solution streamlined our operations perfectly. Highly recommend BlueOrbit Designs!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Emily Rodriguez</div>
+                            <div class="author-role">Operations Director, Global Corp</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Ready to Transform Your Business?</h2>
+                    <p>Let's discuss how we can help you achieve your digital goals.</p>
+                    <a href="contact.html" class="btn btn-primary btn-large">Start a Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <a href="index.html" style="text-decoration: none; display: inline-block;">
+                            <img src="Vetern Owned & Operated-2.svg" alt="BlueOrbit Designs - Veteran Owned & Operated" style="height: 200px; width: auto; max-width: 500px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));">
+                        </a>
+                    </div>
+                    <p style="margin-top: 1rem;">Building the future of digital innovation, one project at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="app-development.html">App Development</a></li>
+                        <li><a href="internal-systems.html">Internal Systems</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="white-label-partner.html">White Label Partner</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BlueOrbit Designs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+    <script src="starfield.js"></script>
+</body>
+</html>

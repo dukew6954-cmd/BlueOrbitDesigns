@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - BlueOrbit Designs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Comfortaa:wght@300;400;500;600;700&family=Bungee&family=Righteous&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+</head>
+<body>
+    <!-- Starfield Background -->
+    <canvas id="starfield-canvas"></canvas>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0a0a1a; background-image: radial-gradient(ellipse 1200px 800px at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 60%), radial-gradient(ellipse 1000px 700px at 80% 70%, rgba(139, 92, 246, 0.12) 0%, transparent 60%); z-index: 99999; display: flex !important; align-items: center; justify-content: center; opacity: 1 !important; visibility: visible !important;">
+        <div class="loading-content" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+            <dotlottie-wc 
+                src="https://lottie.host/267d628b-ec5b-4b08-98d4-068adf3a31d6/wpugCQpQ9k.lottie" 
+                style="width: 300px; height: 300px; display: block !important; opacity: 1 !important; visibility: visible !important; background: transparent !important; border: none !important;" 
+                autoplay
+                speed="2">
+            </dotlottie-wc>
+        </div>
+    </div>
+
+    <!-- Navigation - Modern Horizontal Design -->
+    <nav id="navbar" class="navbar" style="position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99999 !important; background: rgba(10, 10, 26, 0.95) !important; backdrop-filter: blur(20px) !important; border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important; padding: 0 4rem !important; display: flex !important; align-items: center !important; justify-content: space-between !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; overflow: visible !important; height: 125px !important; max-height: 125px !important;">
+        <!-- Large Logo on Left - Extends Beyond Navbar -->
+        <div class="logo" style="flex-shrink: 0; overflow: visible; position: relative; z-index: 10;">
+            <a href="index.html" style="text-decoration: none; display: flex; align-items: center; overflow: visible;">
+                <img src="Vetern Owned & Operated-2.svg" alt="BlueOrbit Designs - Veteran Owned & Operated" style="height: 180px; width: auto; max-width: 400px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));">
+            </a>
+        </div>
+        
+        <!-- Navigation Links on Right -->
+        <ul class="nav-menu" id="nav-menu" style="display: flex; list-style: none; gap: 2rem; align-items: center; margin: 0; padding: 0;">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-dropdown">
+                <a href="services.html" class="nav-link dropdown-toggle">Services <span class="dropdown-arrow">▼</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="services.html" class="dropdown-link">All Services</a></li>
+                    <li><a href="web-development.html" class="dropdown-link">Web Development</a></li>
+                    <li><a href="app-development.html" class="dropdown-link">App Development</a></li>
+                    <li><a href="internal-systems.html" class="dropdown-link">Internal Systems</a></li>
+                </ul>
+            </li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li><a href="about.html" class="nav-link active">About</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">About BlueOrbit Designs</span>
+                </h1>
+                <p class="hero-subtitle">
+                    We're a team of passionate developers, designers, and strategists dedicated to 
+                    transforming ideas into powerful digital solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="quote-content">
+            <div class="quote-mark quote-mark-left">"</div>
+            <h2 class="quote-text">
+                <span class="quote-line">Building the future</span>
+                <span class="quote-line">one innovation</span>
+                <span class="quote-line quote-accent">at a time</span>
+            </h2>
+            <div class="quote-mark quote-mark-right">"</div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Story</span>
+                <h2 class="section-title">From Vision to Reality</h2>
+            </div>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-secondary); margin-bottom: 2rem; text-align: center;">
+                    BlueOrbit Designs was founded in 2018 with a simple yet powerful vision: to make 
+                    cutting-edge technology accessible to businesses of all sizes. We started as a 
+                    small team of passionate developers who believed that every business deserves 
+                    world-class digital solutions.
+                </p>
+                <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-secondary); margin-bottom: 3rem; text-align: center;">
+                    Today, we've grown into a trusted partner for companies worldwide, delivering 
+                    innovative web applications, mobile apps, and enterprise systems that drive real 
+                    business results. Our journey has been marked by continuous learning, adaptation, 
+                    and an unwavering commitment to our clients' success.
+                </p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">2018</div>
+                    <h3>Founded</h3>
+                    <p>Started with a vision to make cutting-edge technology accessible to all businesses</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">50+</div>
+                    <h3>Team Members</h3>
+                    <p>Talented developers, designers, and strategists dedicated to excellence</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">150+</div>
+                    <h3>Projects</h3>
+                    <p>Successful projects completed across various industries worldwide</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">25+</div>
+                    <h3>Countries</h3>
+                    <p>Serving clients globally with world-class digital solutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Mission & Vision</span>
+                <h2 class="section-title">What Drives Us</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                <div class="service-card" style="text-align: left;">
+                    <div class="service-icon" style="margin-bottom: 1.5rem;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <span class="section-label" style="display: block; margin-bottom: 1rem;">Our Mission</span>
+                    <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Empowering Businesses</h3>
+                    <p style="font-size: 1rem; line-height: 1.7;">
+                        To empower businesses through innovative technology solutions that drive growth, 
+                        efficiency, and competitive advantage. We're committed to delivering excellence 
+                        in every project we undertake.
+                    </p>
+                </div>
+                <div class="service-card" style="text-align: left;">
+                    <div class="service-icon" style="margin-bottom: 1.5rem;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                    <span class="section-label" style="display: block; margin-bottom: 1rem;">Our Vision</span>
+                    <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Leading Innovation</h3>
+                    <p style="font-size: 1rem; line-height: 1.7;">
+                        To be the leading technology partner that businesses trust to transform their 
+                        digital presence. We envision a future where technology seamlessly enhances 
+                        every aspect of business operations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Values</span>
+                <h2 class="section-title">What Drives Us Forward</h2>
+            </div>
+        </div>
+        <div class="reviews-slider">
+            <div class="reviews-track">
+                <div class="review-card">
+                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">Client-Centric</h3>
+                    <p class="review-text">Your success is our success. We prioritize understanding your unique needs and delivering solutions that exceed expectations.</p>
+                </div>
+                <div class="review-card">
+                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">Technical Excellence</h3>
+                    <p class="review-text">We maintain the highest standards in code quality, architecture, and best practices to ensure robust, scalable solutions.</p>
+                </div>
+                <div class="review-card">
+                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">Transparency</h3>
+                    <p class="review-text">Clear communication, honest timelines, and regular updates ensure you're always informed and in control.</p>
+                </div>
+                <div class="review-card">
+                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">Innovation</h3>
+                    <p class="review-text">We stay ahead of the curve, embracing new technologies and methodologies to deliver cutting-edge solutions.</p>
+                </div>
+                <!-- Duplicate cards for seamless loop -->
+                <div class="review-card">
+                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">Client-Centric</h3>
+                    <p class="review-text">Your success is our success. We prioritize understanding your unique needs and delivering solutions that exceed expectations.</p>
+                </div>
+                <div class="review-card">
+                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">Technical Excellence</h3>
+                    <p class="review-text">We maintain the highest standards in code quality, architecture, and best practices to ensure robust, scalable solutions.</p>
+                </div>
+                <div class="review-card">
+                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">Transparency</h3>
+                    <p class="review-text">Clear communication, honest timelines, and regular updates ensure you're always informed and in control.</p>
+                </div>
+                <div class="review-card">
+                    <div class="service-icon" style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px;">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Bungee', cursive; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 1px 1px 0px var(--accent-color);">Innovation</h3>
+                    <p class="review-text">We stay ahead of the curve, embracing new technologies and methodologies to deliver cutting-edge solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why BlueOrbit Designs Section -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Why BlueOrbit Designs</span>
+                <h2 class="section-title">Experience That Makes a Difference</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 4rem; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Proven Track Record</h3>
+                    <p>Successfully delivered 150+ projects across various industries, from startups to Fortune 500 companies</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>Our talented developers, designers, and strategists bring years of experience and passion to every project</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>End-to-End Solutions</h3>
+                    <p>From initial concept to deployment and beyond, we handle every aspect of your digital transformation</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Ongoing Support</h3>
+                    <p>We're with you long after launch, providing maintenance, updates, and continuous improvement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Focus Section -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Technology Focus</span>
+                <h2 class="section-title">Staying Ahead of the Curve</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 4rem; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Modern Web</h3>
+                    <p>React, Next.js, Vue.js, and cutting-edge web technologies</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
+                    </div>
+                    <h3>Mobile First</h3>
+                    <p>React Native, Flutter, and native iOS/Android development</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>Cloud Solutions</h3>
+                    <p>AWS, Azure, GCP, and scalable cloud architectures</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h3>Security First</h3>
+                    <p>Enterprise-grade security and compliance standards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Ready to Work Together?</h2>
+                    <p>Let's discuss how we can help bring your vision to life.</p>
+                    <a href="contact.html" class="btn btn-primary btn-large">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <a href="index.html" style="text-decoration: none; display: inline-block;">
+                            <img src="Vetern Owned & Operated-2.svg" alt="BlueOrbit Designs - Veteran Owned & Operated" style="height: 200px; width: auto; max-width: 500px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));">
+                        </a>
+                    </div>
+                    <p style="margin-top: 1rem;">Building the future of digital innovation, one project at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="app-development.html">App Development</a></li>
+                        <li><a href="internal-systems.html">Internal Systems</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="white-label-partner.html">White Label Partner</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BlueOrbit Designs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+    <script src="starfield.js"></script>
+</body>
+</html>
