@@ -9160,3 +9160,35 @@ nav#navbar.navbar {
     padding: 1.5rem 0 !important;
     will-change: auto !important;
 }
+
+/* Extra small Android phones (360px and below) */
+@media (max-width: 360px) {
+    body .mission-control-section {
+        padding-top: 12rem !important;
+        padding-bottom: 6rem !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    body .mission-control-section .section-header {
+        margin-top: 3rem !important;
+        padding-top: 3rem !important;
+    }
+    
+    body .process-section {
+        padding-top: 12rem !important;
+        padding-bottom: 6rem !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    body .process-section .section-header {
+        margin-top: 3rem !important;
+        padding-top: 3rem !important;
+    }
+    
+    .hero {
+        padding-top: 180px !important;
+        padding-bottom: 4rem !important;
+    }
+}
