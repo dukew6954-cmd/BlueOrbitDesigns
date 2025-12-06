@@ -484,12 +484,16 @@ section:not(.hero) > *:not(::before):not(::after) {
 
 @media (max-width: 968px) {
     .mission-control-section {
-        padding-top: 12rem !important;
-        padding-bottom: 6rem !important;
+        padding: 12rem 0 6rem 0 !important;
     }
     
     .mission-control-section .container {
         padding: 0 1.5rem !important;
+    }
+    
+    .mission-control-section .section-header {
+        margin-top: 3rem !important;
+        padding-top: 3rem !important;
     }
     
     .mission-control-section .section-header {
@@ -5392,21 +5396,35 @@ section::after {
 
 @media (max-width: 480px) {
     .mission-control-section {
-        padding-top: 10rem !important;
+        padding: 12rem 0 6rem 0 !important;
     }
     
     .mission-control-section .section-header {
-        margin-top: 3rem;
-        padding-top: 3rem;
+        margin-top: 3rem !important;
+        padding-top: 3rem !important;
     }
     
     .process-section {
-        padding-top: 10rem !important;
+        padding: 12rem 0 6rem 0 !important;
     }
     
     .process-section .section-header {
-        margin-top: 3rem;
-        padding-top: 3rem;
+        margin-top: 3rem !important;
+        padding-top: 3rem !important;
+    }
+    
+    .mission-control-section .section-header {
+        margin-top: 3rem !important;
+        padding-top: 3rem !important;
+    }
+    
+    .process-section {
+        padding: 12rem 0 6rem 0 !important;
+    }
+    
+    .process-section .section-header {
+        margin-top: 3rem !important;
+        padding-top: 3rem !important;
     }
     
     .process-circle {
@@ -8320,11 +8338,21 @@ section::after {
     }
     
     .mission-control-section {
-        padding-top: 12rem !important;
+        padding: 12rem 0 6rem 0 !important;
+    }
+    
+    .mission-control-section .section-header {
+        margin-top: 3rem !important;
+        padding-top: 3rem !important;
     }
     
     .process-section {
-        padding-top: 12rem !important;
+        padding: 12rem 0 6rem 0 !important;
+    }
+    
+    .process-section .section-header {
+        margin-top: 3rem !important;
+        padding-top: 3rem !important;
     }
     
     .selected-work-section,
@@ -8338,12 +8366,6 @@ section::after {
     .section-header {
         margin-top: 2rem;
         padding-top: 2rem;
-    }
-    
-    .mission-control-section .section-header,
-    .process-section .section-header {
-        margin-top: 3rem !important;
-        padding-top: 3rem !important;
     }
     
     .service-card,
@@ -8415,8 +8437,7 @@ section::after {
     }
     
     .process-section {
-        padding-top: 12rem !important;
-        padding-bottom: 6rem !important;
+        padding: 12rem 0 6rem 0 !important;
     }
     
     .process-section .section-header {
