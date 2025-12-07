@@ -5488,43 +5488,49 @@ section::after {
         margin-top: 1rem;
     }
     
-    .process-step {
+    /* MOBILE PROCESS STEP CARDS - 480px */
+    .process-content-wrapper .process-step,
+    .process-step[data-step] {
         padding: 2.25rem 1.75rem !important;
         margin: 0 auto 1.25rem !important;
-        border-radius: 18px;
-        text-align: left;
-        background: rgba(10, 14, 39, 0.95);
-        backdrop-filter: blur(20px);
-        border: 2px solid rgba(0, 212, 255, 0.25);
+        border-radius: 18px !important;
+        text-align: left !important;
+        background: rgba(10, 14, 39, 0.95) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 2px solid rgba(0, 212, 255, 0.25) !important;
         box-shadow: 
             0 6px 28px rgba(0, 0, 0, 0.5),
             0 0 0 1px rgba(0, 212, 255, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
     }
     
-    .process-step::before {
-        width: 5px;
-        height: 100%;
-        box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    .process-content-wrapper .process-step::before,
+    .process-step[data-step]::before {
+        width: 5px !important;
+        height: 100% !important;
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.5) !important;
     }
     
-    .process-step h3 {
+    .process-content-wrapper .process-step h3,
+    .process-step[data-step] h3 {
         font-size: clamp(1.5rem, 6vw, 1.875rem) !important;
         margin-bottom: 0.875rem !important;
         line-height: 1.25 !important;
-        font-weight: 700;
+        font-weight: 700 !important;
     }
     
-    .process-step p {
+    .process-content-wrapper .process-step p,
+    .process-step[data-step] p {
         font-size: 0.9375rem !important;
         line-height: 1.7 !important;
     }
     
-    .step-number {
-        font-size: 0.6875rem;
-        margin-bottom: 1.125rem;
-        padding: 0.45rem 0.9rem;
-        display: inline-block;
+    .process-content-wrapper .process-step .step-number,
+    .process-step[data-step] .step-number {
+        font-size: 0.6875rem !important;
+        margin-bottom: 1.125rem !important;
+        padding: 0.45rem 0.9rem !important;
+        display: inline-block !important;
     }
     
     .monitor-frame {
@@ -8465,9 +8471,6 @@ section::after {
         border-radius: 18px;
     }
     
-    .process-step {
-        padding: 2rem 1.5rem;
-    }
     
     .btn {
         padding: 1rem 1.5rem;
@@ -8609,84 +8612,92 @@ section::after {
         padding: 0;
     }
     
-    .process-step {
+    /* MOBILE PROCESS STEP CARDS - COMPLETE REDESIGN */
+    .process-content-wrapper .process-step,
+    .process-step[data-step] {
         padding: 2.5rem 2rem !important;
         margin: 0 auto 1.5rem !important;
-        max-width: 100%;
-        border-radius: 20px;
-        text-align: left;
-        background: rgba(10, 14, 39, 0.95);
-        backdrop-filter: blur(20px);
-        border: 2px solid rgba(0, 212, 255, 0.25);
+        max-width: 100% !important;
+        border-radius: 20px !important;
+        text-align: left !important;
+        background: rgba(10, 14, 39, 0.95) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 2px solid rgba(0, 212, 255, 0.25) !important;
         box-shadow: 
             0 8px 32px rgba(0, 0, 0, 0.5),
             0 0 0 1px rgba(0, 212, 255, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        position: relative;
-        overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+        position: relative !important;
+        overflow: hidden !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
     
-    .process-step::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 5px;
-        height: 100%;
-        background: linear-gradient(180deg, var(--electric-blue) 0%, rgba(139, 92, 246, 0.8) 100%);
-        box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+    .process-content-wrapper .process-step::before,
+    .process-step[data-step]::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 5px !important;
+        height: 100% !important;
+        background: linear-gradient(180deg, var(--electric-blue) 0%, rgba(139, 92, 246, 0.8) 100%) !important;
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.6) !important;
+        z-index: 1 !important;
     }
     
-    .process-step::after {
-        content: '';
-        position: absolute;
-        top: -50%;
-        right: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
-        pointer-events: none;
+    .process-content-wrapper .process-step::after,
+    .process-step[data-step]::after {
+        content: '' !important;
+        position: absolute !important;
+        top: -50% !important;
+        right: -50% !important;
+        width: 200% !important;
+        height: 200% !important;
+        background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, transparent 70%) !important;
+        pointer-events: none !important;
+        z-index: 0 !important;
     }
     
-    .process-step h3 {
+    .process-content-wrapper .process-step h3,
+    .process-step[data-step] h3 {
         font-size: clamp(1.625rem, 5.5vw, 2rem) !important;
         margin-bottom: 1rem !important;
         margin-top: 0 !important;
         line-height: 1.25 !important;
-        color: var(--text-primary);
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        position: relative;
-        z-index: 2;
+        color: var(--text-primary) !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.02em !important;
+        position: relative !important;
+        z-index: 2 !important;
     }
     
-    .process-step p {
+    .process-content-wrapper .process-step p,
+    .process-step[data-step] p {
         font-size: 1rem !important;
         line-height: 1.7 !important;
-        color: var(--text-secondary);
-        max-width: 100%;
-        margin: 0;
-        position: relative;
-        z-index: 2;
-        font-weight: 400;
+        color: var(--text-secondary) !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        position: relative !important;
+        z-index: 2 !important;
+        font-weight: 400 !important;
     }
     
-    .step-number {
-        font-size: 0.75rem;
-        margin-bottom: 1rem;
-        letter-spacing: 0.2em;
-        font-weight: 700;
-        color: var(--electric-blue);
-        position: relative;
-        z-index: 2;
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        background: rgba(0, 212, 255, 0.15);
-        border-radius: 8px;
-        border: 1px solid rgba(0, 212, 255, 0.3);
-        text-transform: uppercase;
-        margin-bottom: 1.25rem;
+    .process-content-wrapper .process-step .step-number,
+    .process-step[data-step] .step-number {
+        font-size: 0.75rem !important;
+        margin-bottom: 1.25rem !important;
+        letter-spacing: 0.2em !important;
+        font-weight: 700 !important;
+        color: var(--electric-blue) !important;
+        position: relative !important;
+        z-index: 2 !important;
+        display: inline-block !important;
+        padding: 0.5rem 1rem !important;
+        background: rgba(0, 212, 255, 0.15) !important;
+        border-radius: 8px !important;
+        border: 1px solid rgba(0, 212, 255, 0.3) !important;
+        text-transform: uppercase !important;
     }
     
     /* About Page - Mission & Vision Section Mobile */
@@ -9417,43 +9428,49 @@ nav#navbar.navbar {
         margin-top: 1rem;
     }
     
-    .process-step {
+    /* MOBILE PROCESS STEP CARDS - 360px */
+    .process-content-wrapper .process-step,
+    .process-step[data-step] {
         padding: 2rem 1.5rem !important;
         margin: 0 auto 1rem !important;
-        border-radius: 16px;
-        text-align: left;
-        background: rgba(10, 14, 39, 0.95);
-        backdrop-filter: blur(20px);
-        border: 2px solid rgba(0, 212, 255, 0.25);
+        border-radius: 16px !important;
+        text-align: left !important;
+        background: rgba(10, 14, 39, 0.95) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 2px solid rgba(0, 212, 255, 0.25) !important;
         box-shadow: 
             0 6px 24px rgba(0, 0, 0, 0.5),
             0 0 0 1px rgba(0, 212, 255, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
     }
     
-    .process-step::before {
-        width: 4px;
-        height: 100%;
-        box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+    .process-content-wrapper .process-step::before,
+    .process-step[data-step]::before {
+        width: 4px !important;
+        height: 100% !important;
+        box-shadow: 0 0 12px rgba(0, 212, 255, 0.5) !important;
     }
     
-    .process-step h3 {
+    .process-content-wrapper .process-step h3,
+    .process-step[data-step] h3 {
         font-size: clamp(1.375rem, 6.5vw, 1.75rem) !important;
         margin-bottom: 0.75rem !important;
         line-height: 1.25 !important;
-        font-weight: 700;
+        font-weight: 700 !important;
     }
     
-    .process-step p {
+    .process-content-wrapper .process-step p,
+    .process-step[data-step] p {
         font-size: 0.875rem !important;
         line-height: 1.7 !important;
     }
     
-    .step-number {
-        font-size: 0.625rem;
-        margin-bottom: 1rem;
-        padding: 0.4rem 0.8rem;
-        display: inline-block;
+    .process-content-wrapper .process-step .step-number,
+    .process-step[data-step] .step-number {
+        font-size: 0.625rem !important;
+        margin-bottom: 1rem !important;
+        padding: 0.4rem 0.8rem !important;
+        display: inline-block !important;
     }
     
     .hero {
