@@ -9065,69 +9065,34 @@ section::after {
         max-height: 100px !important;
         padding: 0 1.5rem !important;
         justify-content: space-between !important;
-        align-items: center !important;
     }
     
-    /* Hamburger on Left */
-    #navbar .hamburger {
-        order: 1;
-        display: flex !important;
-        margin-left: 0;
-        margin-right: auto;
-    }
-    
-    /* Logo in Middle */
     #navbar .logo {
-        order: 2;
         flex: 0 0 auto;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
+        order: 1;
     }
     
     #navbar .logo img {
-        height: 100px !important;
-        max-width: 180px !important;
+        height: 120px !important;
+        max-width: 200px !important;
     }
     
-    /* Hide nav menu on mobile */
     #navbar .nav-menu {
-        display: none !important;
-    }
-    
-    /* Let's Talk Button on Right */
-    #navbar .nav-cta-btn {
         order: 3;
-        display: inline-flex !important;
-        align-items: center;
-        margin-left: auto;
-        margin-right: 0;
-        padding: 0.625rem 1.25rem;
-        font-size: 0.875rem;
     }
     
-    /* Smaller mobile adjustments */
-    @media (max-width: 480px) {
-        #navbar {
-            padding: 0 1rem !important;
-        }
-        
-        #navbar .logo img {
-            height: 85px !important;
-            max-width: 150px !important;
-        }
-        
-        #navbar .nav-cta-btn {
-            padding: 0.5rem 1rem;
-            font-size: 0.8125rem;
-        }
-        
-        #navbar .hamburger {
-            width: 48px;
-            height: 48px;
-            padding: 0.625rem;
-        }
+    #navbar .hamburger {
+        order: 2;
+        margin-left: auto;
+    }
+    
+    .nav-menu {
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
     }
     
     .nav-menu {
