@@ -978,9 +978,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Mission Control - Sequential Widget Animation & Screen Time
 document.addEventListener('DOMContentLoaded', () => {
-    const dashboardWidgets = document.querySelectorAll('.dashboard-widget');
+    const statusCards = document.querySelectorAll('.status-card');
     
-    if (!dashboardWidgets.length) return;
+    if (!statusCards.length) return;
     
     const observerOptions = {
         root: null,
@@ -991,9 +991,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const observerCallback = (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                dashboardWidgets.forEach((widget, index) => {
+                statusCards.forEach((card, index) => {
                     setTimeout(() => {
-                        widget.classList.add('visible');
+                        card.classList.add('visible');
                     }, index * 100);
                 });
                 observer.disconnect();
@@ -1006,20 +1006,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (missionControlSection) {
         observer.observe(missionControlSection);
-    }
-    
-    // Update screen time
-    const screenTimeElement = document.getElementById('screenTime');
-    if (screenTimeElement) {
-        function updateTime() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            screenTimeElement.textContent = `${hours}:${minutes}:${seconds}`;
-        }
-        updateTime();
-        setInterval(updateTime, 1000);
     }
     
     // Add click interaction to widgets
