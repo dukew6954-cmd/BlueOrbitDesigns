@@ -257,16 +257,9 @@ section:not(.hero) > *:not(::before):not(::after) {
     text-align: center;
 }
 
-/* Mission Control Panel - Glass-like Container */
+/* Mission Control Panel - Inside Monitor Screen */
 .mission-control-panel {
-    max-width: 1200px;
-    margin: 4rem auto 0;
-    padding: 3rem;
-    background: rgba(10, 14, 39, 0.4);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
+    padding: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
@@ -366,11 +359,20 @@ section:not(.hero) > *:not(::before):not(::after) {
         padding: 8rem 0 6rem;
     }
     
+    .monitor-frame {
+        width: calc(100% - 2rem);
+        padding: 1rem;
+        margin-top: 3rem;
+    }
+    
     .mission-control-panel {
-        padding: 2rem 1.5rem;
         grid-template-columns: 1fr;
         gap: 1.25rem;
-        margin-top: 3rem;
+    }
+    
+    .screen-content {
+        padding: 1.5rem;
+        min-height: auto;
     }
     
     .status-card {
@@ -387,8 +389,16 @@ section:not(.hero) > *:not(::before):not(::after) {
 }
 
 @media (max-width: 480px) {
+    .monitor-frame {
+        width: calc(100% - 1rem);
+        padding: 0.75rem;
+    }
+    
+    .screen-content {
+        padding: 1rem;
+    }
+    
     .mission-control-panel {
-        padding: 1.5rem 1rem;
         gap: 1rem;
     }
     
@@ -539,6 +549,16 @@ section:not(.hero) > *:not(::before):not(::after) {
     min-height: 600px;
     position: relative;
     z-index: 1;
+}
+
+/* Mission Control Panel - Inside Monitor Screen */
+.mission-control-panel {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    position: relative;
+    z-index: 2;
 }
 
 .mission-control-dashboard {
