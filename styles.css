@@ -5087,6 +5087,9 @@ section::after {
     -webkit-appearance: none;
     appearance: none;
     box-shadow: none;
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    user-select: none;
 }
 
 .process-circle:focus,
@@ -5263,7 +5266,18 @@ section::after {
 }
 
 .process-step.active {
-    display: block;
+    display: block !important;
+}
+
+/* Ensure process content wrapper is visible */
+.process-content-wrapper {
+    display: block !important;
+    visibility: visible !important;
+}
+
+.process-tabs-container {
+    display: block !important;
+    visibility: visible !important;
 }
 
 @keyframes fadeInSlide {
@@ -5418,30 +5432,50 @@ section::after {
     }
     
     .process-circle {
-        width: 40px;
-        height: 40px;
-        flex-shrink: 0;
-        flex: 0 0 40px;
+        width: 65px;
+        height: 65px;
+        min-width: 65px;
+        min-height: 65px;
     }
     
     .process-circle-wrapper {
-        gap: 0.1rem;
-        padding: 0 0.5rem 2rem;
+        gap: 0.75rem;
+        padding: 0 1.25rem 2.5rem;
     }
     
     .orbital-line {
-        min-width: 4px;
-        max-width: 15px;
-        flex-shrink: 1;
-        flex: 1 1 auto;
+        min-width: 25px;
+        max-width: 35px;
     }
     
     .circle-label {
-        font-size: 0.5rem;
+        font-size: 0.7rem;
+        top: calc(100% + 0.5rem);
     }
     
     .circle-number {
-        font-size: 0.45rem;
+        font-size: 0.65rem;
+    }
+    
+    .process-content-wrapper {
+        min-height: 250px;
+        padding: 0;
+    }
+    
+    .process-step {
+        padding: 1.75rem 1rem !important;
+    }
+    
+    .process-step h3 {
+        font-size: clamp(1.25rem, 6vw, 1.75rem) !important;
+    }
+    
+    .process-step p {
+        font-size: 0.9375rem !important;
+    }
+    
+    .step-number {
+        font-size: 0.65rem;
     }
     
     .monitor-frame {
@@ -8462,73 +8496,98 @@ section::after {
     
     .process-timeline {
         margin-bottom: 2rem;
-        padding: 1rem 0 3rem;
-        overflow-x: visible;
+        padding: 1rem 0 4rem;
+        overflow-x: auto;
         overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 0 1.5rem;
+        scrollbar-width: thin;
+    }
+    
+    .process-timeline::-webkit-scrollbar {
+        height: 4px;
+        display: block;
+    }
+    
+    .process-timeline::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 2px;
+    }
+    
+    .process-timeline::-webkit-scrollbar-thumb {
+        background: var(--electric-blue);
+        border-radius: 2px;
     }
     
     .process-circle-wrapper {
-        gap: 0.15rem;
-        padding: 0 0.5rem 2.5rem;
+        gap: 1rem;
+        padding: 0 1.5rem 3rem;
         overflow: visible;
-        min-width: auto;
-        justify-content: space-between;
+        min-width: max-content;
+        justify-content: flex-start;
         display: flex;
-        width: 100%;
         align-items: center;
     }
     
     .process-circle {
-        width: 45px;
-        height: 45px;
+        width: 75px;
+        height: 75px;
         flex-shrink: 0;
-        flex: 0 0 45px;
+        scroll-snap-align: center;
+        min-width: 75px;
+        min-height: 75px;
+        touch-action: manipulation;
     }
     
     .circle-label {
-        font-size: 0.5rem;
-        margin-top: 0.4rem;
+        font-size: 0.75rem;
+        margin-top: 0.75rem;
         white-space: nowrap;
+        top: calc(100% + 0.75rem);
+        font-weight: 500;
     }
     
     .orbital-line {
-        min-width: 6px;
-        max-width: 20px;
-        flex-shrink: 1;
-        flex: 1 1 auto;
+        min-width: 35px;
+        max-width: 50px;
+        flex-shrink: 0;
         height: 2px;
     }
     
     .circle-number {
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
     
     .process-content-wrapper {
-        min-height: 300px;
+        min-height: 280px;
+        padding: 0 0.5rem;
     }
     
     .process-content {
-        padding: 0 1rem;
+        padding: 0;
     }
     
     .process-step {
-        padding: 2rem 1.5rem;
-    }
-    
-    .process-content-wrapper {
-        min-height: 300px;
-    }
-    
-    .process-step {
-        padding: 2rem 1.5rem !important;
+        padding: 2rem 1.25rem !important;
+        margin: 0 auto;
+        max-width: 100%;
+        border-radius: 12px;
     }
     
     .process-step h3 {
         font-size: clamp(1.5rem, 5vw, 2rem) !important;
+        margin-bottom: 1rem !important;
     }
     
     .process-step p {
         font-size: 1rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    .step-number {
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
     }
     
     /* About Page - Mission & Vision Section Mobile */
@@ -9195,6 +9254,62 @@ nav#navbar.navbar {
     body .process-section .section-header {
         margin-top: 0 !important;
         padding-top: 0 !important;
+    }
+    
+    .process-tabs-container {
+        margin-top: 2rem;
+    }
+    
+    .process-timeline {
+        padding: 0.75rem 0 3rem;
+        scroll-padding: 0 1rem;
+    }
+    
+    .process-circle {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        min-height: 60px;
+    }
+    
+    .process-circle-wrapper {
+        gap: 0.5rem;
+        padding: 0 1rem 2rem;
+    }
+    
+    .orbital-line {
+        min-width: 20px;
+        max-width: 30px;
+    }
+    
+    .circle-label {
+        font-size: 0.65rem;
+        top: calc(100% + 0.5rem);
+    }
+    
+    .circle-number {
+        font-size: 0.6rem;
+    }
+    
+    .process-content-wrapper {
+        min-height: 240px;
+        padding: 0;
+    }
+    
+    .process-step {
+        padding: 1.5rem 0.875rem !important;
+    }
+    
+    .process-step h3 {
+        font-size: clamp(1.125rem, 7vw, 1.5rem) !important;
+    }
+    
+    .process-step p {
+        font-size: 0.875rem !important;
+    }
+    
+    .step-number {
+        font-size: 0.6rem;
     }
     
     .hero {
