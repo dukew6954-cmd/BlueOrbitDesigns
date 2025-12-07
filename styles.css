@@ -5935,16 +5935,14 @@ section::after {
     animation: slideReviews 30s linear infinite;
     width: fit-content;
     will-change: transform;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
-.reviews-track.paused {
-    animation-play-state: paused;
-}
-
-.reviews-track.user-scrolling {
-    animation: none;
-    transition: transform 0.1s ease-out;
-}
+/* User controls removed - reviews auto-scroll only */
 
 @keyframes slideReviews {
     0% {
@@ -7672,9 +7670,11 @@ section::after {
 .cta-section {
     position: relative;
     z-index: 1;
-    background: #000;
+    background: linear-gradient(180deg, #050810 0%, #0A0E27 50%, #050810 100%);
     padding: 12rem 0;
-    border-top: 1px solid rgba(59, 130, 246, 0.1);
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    overflow: hidden;
 }
 
 .cta-section::before {
@@ -7685,10 +7685,37 @@ section::after {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(ellipse 1500px 1000px at 50% 50%, rgba(10, 14, 39, 0.95) 0%, transparent 70%),
-        #000;
+        radial-gradient(ellipse 2000px 1200px at 50% 50%, rgba(0, 212, 255, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 1500px 1000px at 30% 70%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
     z-index: 0;
     pointer-events: none;
+}
+
+.cta-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
 }
 
 .cta-section .container {
@@ -7702,9 +7729,64 @@ section::after {
     align-items: center;
     justify-content: center;
     text-align: center;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
-    gap: 3rem;
+    gap: 2.5rem;
+    padding: 4rem 3rem;
+    background: rgba(10, 14, 39, 0.4);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 24px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(0, 212, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--electric-blue) 50%, transparent 100%);
+    opacity: 0.6;
+}
+
+.cta-text {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.cta-text h2 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cta-text p {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 0 2.5rem 0;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cta-headline {
@@ -7718,6 +7800,50 @@ section::after {
     text-align: center;
 }
 
+/* CTA Button Enhancement */
+.cta-content .btn-primary.btn-large {
+    padding: 1.375rem 3.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--electric-blue) 0%, rgba(139, 92, 246, 0.9) 100%);
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    box-shadow: 
+        0 8px 24px rgba(0, 212, 255, 0.3),
+        0 0 0 1px rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-content .btn-primary.btn-large::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-content .btn-primary.btn-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 12px 32px rgba(0, 212, 255, 0.4),
+        0 0 0 1px rgba(0, 212, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 0 40px rgba(0, 212, 255, 0.3);
+}
+
+.cta-content .btn-primary.btn-large:hover::before {
+    left: 100%;
+}
+
+.cta-content .btn-primary.btn-large:active {
+    transform: translateY(0);
+}
+
 /* CTA Responsive */
 @media (max-width: 968px) {
     .cta-section {
@@ -7725,8 +7851,19 @@ section::after {
     }
     
     .cta-content {
-        gap: 2.5rem;
-        padding: 0 2rem;
+        gap: 2rem;
+        padding: 3rem 2rem;
+        border-radius: 20px;
+    }
+    
+    .cta-text h2 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        margin-bottom: 1.25rem;
+    }
+    
+    .cta-text p {
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        margin-bottom: 2rem;
     }
     
     .cta-headline {
@@ -7740,13 +7877,26 @@ section::after {
     }
     
     .cta-content {
-        gap: 2rem;
-        padding: 0 1.5rem;
+        gap: 1.75rem;
+        padding: 2.5rem 1.5rem;
+        border-radius: 18px;
     }
     
-    .btn-large {
+    .cta-text h2 {
+        font-size: clamp(1.75rem, 6vw, 2.5rem);
+        margin-bottom: 1rem;
+    }
+    
+    .cta-text p {
+        font-size: clamp(0.9375rem, 3vw, 1.125rem);
+        margin-bottom: 1.75rem;
+    }
+    
+    .cta-content .btn-primary.btn-large {
         padding: 1.125rem 2.5rem;
         font-size: 1rem;
+        width: 100%;
+        max-width: 100%;
     }
 }
 
