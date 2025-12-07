@@ -5484,44 +5484,42 @@ section::after {
     
     .process-content-wrapper {
         min-height: auto;
-        padding: 0;
+        padding: 0 0.5rem;
+        margin-top: 1rem;
     }
     
     .process-step {
-        padding: 2.25rem 1.375rem !important;
-        border-radius: 20px;
+        padding: 1.875rem 1.25rem !important;
+        border-radius: 16px;
         text-align: center;
-        background: linear-gradient(135deg, rgba(10, 10, 26, 0.98) 0%, rgba(15, 15, 35, 0.95) 100%);
-        backdrop-filter: blur(20px);
-        border: 2px solid rgba(0, 212, 255, 0.25);
+        background: rgba(10, 10, 26, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 212, 255, 0.2);
         box-shadow: 
-            0 8px 35px rgba(0, 0, 0, 0.4),
-            0 0 0 1px rgba(0, 212, 255, 0.15),
-            inset 0 1px 0 rgba(255, 255, 255, 0.08),
-            0 0 50px rgba(0, 212, 255, 0.1);
+            0 4px 18px rgba(0, 0, 0, 0.3),
+            0 0 0 1px rgba(0, 212, 255, 0.1);
     }
     
     .process-step::before {
         height: 3px;
-        box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
     }
     
     .process-step h3 {
-        font-size: clamp(1.625rem, 6.5vw, 2.25rem) !important;
-        margin-bottom: 1.25rem !important;
-        line-height: 1.2 !important;
-        font-weight: 700;
+        font-size: clamp(1.375rem, 6vw, 1.875rem) !important;
+        margin-bottom: 0.875rem !important;
+        line-height: 1.3 !important;
+        font-weight: 600;
     }
     
     .process-step p {
-        font-size: 1rem !important;
-        line-height: 1.7 !important;
+        font-size: 0.9375rem !important;
+        line-height: 1.65 !important;
     }
     
     .step-number {
-        font-size: 0.75rem;
-        margin-bottom: 1.25rem;
-        padding: 0.45rem 0.9rem;
+        font-size: 0.7rem;
+        margin-bottom: 0.875rem;
+        display: block;
     }
     
     .monitor-frame {
@@ -8598,7 +8596,8 @@ section::after {
     
     .process-content-wrapper {
         min-height: auto;
-        padding: 0;
+        padding: 0 0.5rem;
+        margin-top: 1rem;
     }
     
     .process-content {
@@ -8606,19 +8605,17 @@ section::after {
     }
     
     .process-step {
-        padding: 2.5rem 1.5rem !important;
+        padding: 2rem 1.5rem !important;
         margin: 0 auto;
         max-width: 100%;
-        border-radius: 24px;
+        border-radius: 16px;
         text-align: center;
-        background: linear-gradient(135deg, rgba(10, 10, 26, 0.98) 0%, rgba(15, 15, 35, 0.95) 100%);
-        backdrop-filter: blur(20px);
-        border: 2px solid rgba(0, 212, 255, 0.25);
+        background: rgba(10, 10, 26, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 212, 255, 0.2);
         box-shadow: 
-            0 10px 40px rgba(0, 0, 0, 0.4),
-            0 0 0 1px rgba(0, 212, 255, 0.15),
-            inset 0 1px 0 rgba(255, 255, 255, 0.08),
-            0 0 60px rgba(0, 212, 255, 0.1);
+            0 4px 20px rgba(0, 0, 0, 0.3),
+            0 0 0 1px rgba(0, 212, 255, 0.1);
         position: relative;
         overflow: hidden;
         transition: all 0.3s ease;
@@ -8630,43 +8627,25 @@ section::after {
         top: 0;
         left: 0;
         right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, var(--electric-blue) 0%, rgba(139, 92, 246, 0.8) 50%, var(--electric-blue) 100%);
-        opacity: 0.8;
-        box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
-    }
-    
-    .process-step::after {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-    }
-    
-    .process-step.active::after {
-        opacity: 1;
+        height: 3px;
+        background: linear-gradient(90deg, var(--electric-blue) 0%, rgba(139, 92, 246, 0.6) 100%);
+        opacity: 0.7;
     }
     
     .process-step h3 {
-        font-size: clamp(1.875rem, 6vw, 2.5rem) !important;
-        margin-bottom: 1.5rem !important;
-        line-height: 1.2 !important;
+        font-size: clamp(1.5rem, 5.5vw, 2rem) !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.3 !important;
         color: var(--text-primary);
-        font-weight: 700;
-        letter-spacing: -0.02em;
+        font-weight: 600;
+        letter-spacing: -0.01em;
         position: relative;
         z-index: 1;
     }
     
     .process-step p {
-        font-size: 1.0625rem !important;
-        line-height: 1.75 !important;
+        font-size: 1rem !important;
+        line-height: 1.65 !important;
         color: var(--text-secondary);
         max-width: 100%;
         margin: 0 auto;
@@ -8676,18 +8655,14 @@ section::after {
     }
     
     .step-number {
-        font-size: 0.8125rem;
-        margin-bottom: 1.5rem;
-        letter-spacing: 0.2em;
-        font-weight: 700;
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+        letter-spacing: 0.15em;
+        font-weight: 600;
         color: var(--electric-blue);
         position: relative;
         z-index: 1;
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        background: rgba(0, 212, 255, 0.1);
-        border-radius: 8px;
-        border: 1px solid rgba(0, 212, 255, 0.2);
+        display: block;
     }
     
     /* About Page - Mission & Vision Section Mobile */
@@ -9414,44 +9389,42 @@ nav#navbar.navbar {
     
     .process-content-wrapper {
         min-height: auto;
-        padding: 0;
+        padding: 0 0.5rem;
+        margin-top: 1rem;
     }
     
     .process-step {
-        padding: 2rem 1.125rem !important;
-        border-radius: 18px;
+        padding: 1.75rem 1rem !important;
+        border-radius: 16px;
         text-align: center;
-        background: linear-gradient(135deg, rgba(10, 10, 26, 0.98) 0%, rgba(15, 15, 35, 0.95) 100%);
-        backdrop-filter: blur(20px);
-        border: 2px solid rgba(0, 212, 255, 0.25);
+        background: rgba(10, 10, 26, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 212, 255, 0.2);
         box-shadow: 
-            0 8px 30px rgba(0, 0, 0, 0.4),
-            0 0 0 1px rgba(0, 212, 255, 0.15),
-            inset 0 1px 0 rgba(255, 255, 255, 0.08),
-            0 0 45px rgba(0, 212, 255, 0.1);
+            0 4px 16px rgba(0, 0, 0, 0.3),
+            0 0 0 1px rgba(0, 212, 255, 0.1);
     }
     
     .process-step::before {
         height: 3px;
-        box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
     }
     
     .process-step h3 {
-        font-size: clamp(1.5rem, 7.5vw, 2rem) !important;
-        margin-bottom: 1.125rem !important;
-        line-height: 1.2 !important;
-        font-weight: 700;
+        font-size: clamp(1.25rem, 7vw, 1.75rem) !important;
+        margin-bottom: 0.75rem !important;
+        line-height: 1.3 !important;
+        font-weight: 600;
     }
     
     .process-step p {
-        font-size: 0.9375rem !important;
-        line-height: 1.7 !important;
+        font-size: 0.875rem !important;
+        line-height: 1.65 !important;
     }
     
     .step-number {
-        font-size: 0.7rem;
-        margin-bottom: 1.125rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 0.65rem;
+        margin-bottom: 0.75rem;
+        display: block;
     }
     
     .hero {
