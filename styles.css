@@ -118,6 +118,7 @@ body::before {
     z-index: 0;
     pointer-events: none;
     opacity: 0.8;
+    display: block;
 }
 
 /* Ensure all content sections are above the video */
