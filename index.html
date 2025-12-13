@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HVAC Booking System - Capture Missed Calls & Book More Jobs | Done-For-You Setup</title>
+    <title>BlueOrbit Designs - Web Development, App Development & Internal Systems</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Fixed navbar wrapper - BULLETPROOF */
@@ -72,6 +72,17 @@
         <!-- Navigation Links on Right -->
         <ul class="nav-menu" id="nav-menu" style="display: flex; list-style: none; gap: 2rem; align-items: center; margin: 0; padding: 0;">
             <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li class="nav-dropdown">
+                <a href="services.html" class="nav-link dropdown-toggle">Capabilities <span class="dropdown-arrow">▼</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="services.html" class="dropdown-link">All Capabilities</a></li>
+                    <li><a href="web-development.html" class="dropdown-link">Web Development</a></li>
+                    <li><a href="app-development.html" class="dropdown-link">App Development</a></li>
+                    <li><a href="internal-systems.html" class="dropdown-link">Internal Systems</a></li>
+                </ul>
+            </li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
             <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
         
@@ -88,86 +99,44 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">
-                    <span class="title-line">Stop Losing HVAC Jobs</span>
-                    <span class="title-line">to Missed Calls</span>
+                    <span class="title-line">Building the Future</span>
+                    <span class="title-line">of Digital Innovation</span>
                 </h1>
                 <p class="hero-subtitle">
-                    A done-for-you booking system that captures every call, books jobs 24/7, 
-                    and follows up automatically. Live in 7 days. More booked jobs guaranteed.
+                    We craft exceptional web applications, mobile apps, and internal systems 
+                    that transform businesses and delight users.
                 </p>
                 <div class="hero-buttons">
-                    <a href="contact.html" class="btn btn-primary">Request a Free HVAC Booking Audit</a>
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    <a href="portfolio.html" class="btn btn-secondary">View Our Work</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem Section -->
-    <section class="quote-section" style="background: rgba(220, 38, 38, 0.1); border-top: 2px solid rgba(220, 38, 38, 0.3); border-bottom: 2px solid rgba(220, 38, 38, 0.3);">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 3rem;">
-                <h2 class="section-title" style="color: #FCA5A5;">How Much Money Are You Losing?</h2>
-            </div>
-            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-                <div class="service-card" style="border-left: 4px solid #EF4444;">
-                    <h3 style="color: #FCA5A5; margin-bottom: 1rem;">Missed Calls After Hours</h3>
-                    <p>Customers call when you're closed. They leave voicemails you never check. By morning, they've called your competitor. That's $500-$1,500 per missed call walking out the door.</p>
-                </div>
-                <div class="service-card" style="border-left: 4px solid #EF4444;">
-                    <h3 style="color: #FCA5A5; margin-bottom: 1rem;">Slow Follow-Up</h3>
-                    <p>You're busy on jobs. Leads sit in your phone for hours or days. By the time you call back, they've already booked with someone faster. Every delayed call costs you revenue.</p>
-                </div>
-                <div class="service-card" style="border-left: 4px solid #EF4444;">
-                    <h3 style="color: #FCA5A5; margin-bottom: 1rem;">No SMS Response</h3>
-                    <p>Customers text you, but you don't see it. Or you see it hours later. Text is how people communicate now. If you're not responding instantly, you're losing jobs.</p>
-                </div>
-                <div class="service-card" style="border-left: 4px solid #EF4444;">
-                    <h3 style="color: #FCA5A5; margin-bottom: 1rem;">Weak Mobile Experience</h3>
-                    <p>Your website looks broken on phones. Customers can't book easily. They get frustrated and leave. A bad mobile site kills conversions and makes you look unprofessional.</p>
-                </div>
-            </div>
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="quote-content">
+            <div class="quote-mark quote-mark-left">"</div>
+            <h2 class="quote-text">
+                <span class="quote-line">Innovation is not about</span>
+                <span class="quote-line">what you create,</span>
+                <span class="quote-line">it's about what you</span>
+                <span class="quote-line quote-accent">enable others to achieve</span>
+            </h2>
+            <div class="quote-mark quote-mark-right">"</div>
         </div>
     </section>
 
-    <!-- Solution Section - What We Install -->
+    <!-- Services Preview -->
     <section class="services-preview" id="services">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">What We Install</span>
-                <h2 class="section-title">Your Complete Booking System</h2>
-                <p style="max-width: 800px; margin: 1.5rem auto 0; color: var(--text-secondary); font-size: 1.1rem;">Everything you need to capture leads, book jobs, and follow up automatically. No tech skills required.</p>
+                <span class="section-label">What We Do</span>
+                <h2 class="section-title">Our Services</h2>
             </div>
-            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <div class="service-card" style="border-left: 4px solid #00D4FF;">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                        </svg>
-                    </div>
-                    <h3>Missed-Call Text-Back System</h3>
-                    <p>Every missed call gets an instant text. Customers can reply to book immediately, even after hours. No more lost calls.</p>
-                </div>
-                <div class="service-card" style="border-left: 4px solid #00D4FF;">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
-                    </div>
-                    <h3>24/7 Booking & Lead Capture</h3>
-                    <p>Customers book jobs online anytime. Your calendar stays updated. Leads flow in automatically, even when you're sleeping.</p>
-                </div>
-                <div class="service-card" style="border-left: 4px solid #00D4FF;">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="5" y="2" width="14" height="20" rx="2"></rect>
-                            <line x1="12" y1="18" x2="12" y2="18.01"></line>
-                        </svg>
-                    </div>
-                    <h3>HVAC-Optimized Mobile Website</h3>
-                    <p>Your site works perfectly on phones. Fast loading, easy booking, clear service pages. Built specifically for HVAC customers.</p>
-                </div>
-                <div class="service-card" style="border-left: 4px solid #00D4FF;">
+            <div class="services-grid">
+                <div class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="3" width="20" height="14" rx="2"></rect>
@@ -175,38 +144,99 @@
                             <line x1="12" y1="17" x2="12" y2="21"></line>
                         </svg>
                     </div>
-                    <h3>Lead Pipeline Dashboard</h3>
-                    <p>See every lead in one place. Track calls, texts, bookings, and revenue. Know exactly what's working and what's not.</p>
+                    <h3>Web Development</h3>
+                    <p>Modern, responsive websites and web applications built with cutting-edge technologies.</p>
+                    <a href="web-development.html" class="service-link">Learn More →</a>
                 </div>
-                <div class="service-card" style="border-left: 4px solid #00D4FF;">
+                <div class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+                            <line x1="12" y1="18" x2="12" y2="18.01"></line>
                         </svg>
                     </div>
-                    <h3>Automated Google Review Requests</h3>
-                    <p>After every completed job, customers automatically get asked for a review. Build your reputation without lifting a finger.</p>
+                    <h3>App Development</h3>
+                    <p>Native and cross-platform mobile applications for iOS and Android that users love.</p>
+                    <a href="app-development.html" class="service-link">Learn More →</a>
                 </div>
-                <div class="service-card" style="border-left: 4px solid #00D4FF;">
+                <div class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
                         </svg>
                     </div>
-                    <h3>Call Tracking & Reporting</h3>
-                    <p>Know which marketing works. See call sources, conversion rates, and revenue by channel. Make smarter decisions with real data.</p>
+                    <h3>Internal Systems</h3>
+                    <p>Custom enterprise solutions that streamline operations and boost productivity.</p>
+                    <a href="internal-systems.html" class="service-link">Learn More →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
+    <!-- Mission Control Section -->
+    <section class="mission-control-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Mission Control</span>
+                <h2 class="section-title">Mission Control</h2>
+                <p class="mission-control-subtitle">How we monitor and manage projects with engineering discipline and systematic oversight.</p>
+            </div>
+            <div class="monitor-frame">
+                <div class="monitor-screen">
+                    <div class="screen-header">
+                        <div class="screen-controls">
+                            <div class="control-dot control-close"></div>
+                            <div class="control-dot control-minimize"></div>
+                            <div class="control-dot control-maximize"></div>
+                        </div>
+                        <div class="screen-title">Mission Control</div>
+                    </div>
+                    <div class="screen-content">
+                        <div class="mission-control-panel">
+                            <div class="status-card">
+                                <div class="status-header">
+                                    <h3 class="status-title">Deployment Status</h3>
+                                </div>
+                                <p class="status-detail">Live · Last deploy 2h ago</p>
+                            </div>
+                            <div class="status-card">
+                                <div class="status-header">
+                                    <h3 class="status-title">Performance</h3>
+                                </div>
+                                <p class="status-detail">Optimized · Fast load times</p>
+                            </div>
+                            <div class="status-card">
+                                <div class="status-header">
+                                    <h3 class="status-title">Architecture</h3>
+                                </div>
+                                <p class="status-detail">Modern, scalable stack</p>
+                            </div>
+                            <div class="status-card">
+                                <div class="status-header">
+                                    <h3 class="status-title">Security</h3>
+                                </div>
+                                <p class="status-detail">SSL enabled · Daily backups</p>
+                            </div>
+                            <div class="status-card">
+                                <div class="status-header">
+                                    <h3 class="status-title">Build Signals</h3>
+                                </div>
+                                <p class="status-detail">SEO-ready · Conversion-focused</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
     <section class="process-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">How It Works</span>
-                <h2 class="section-title">Get Your System Live in 7 Days</h2>
+                <span class="section-label">Process</span>
+                <h2 class="section-title">How We Work</h2>
             </div>
             <div class="process-tabs-container">
                 <div class="process-timeline">
@@ -216,7 +246,7 @@
                                 <span class="circle-number">01</span>
                             </div>
                             <div class="circle-glow"></div>
-                            <div class="circle-label">Free Audit</div>
+                            <div class="circle-label">Discovery</div>
                         </button>
                         <div class="orbital-line"></div>
                         <button class="process-circle" data-step="1">
@@ -224,7 +254,7 @@
                                 <span class="circle-number">02</span>
                             </div>
                             <div class="circle-glow"></div>
-                            <div class="circle-label">Install in 7 Days</div>
+                            <div class="circle-label">Design</div>
                         </button>
                         <div class="orbital-line"></div>
                         <button class="process-circle" data-step="2">
@@ -232,7 +262,23 @@
                                 <span class="circle-number">03</span>
                             </div>
                             <div class="circle-glow"></div>
-                            <div class="circle-label">Capture More Jobs</div>
+                            <div class="circle-label">Build</div>
+                        </button>
+                        <div class="orbital-line"></div>
+                        <button class="process-circle" data-step="3">
+                            <div class="circle-inner">
+                                <span class="circle-number">04</span>
+                            </div>
+                            <div class="circle-glow"></div>
+                            <div class="circle-label">Launch</div>
+                        </button>
+                        <div class="orbital-line"></div>
+                        <button class="process-circle" data-step="4">
+                            <div class="circle-inner">
+                                <span class="circle-number">05</span>
+                            </div>
+                            <div class="circle-glow"></div>
+                            <div class="circle-label">Orbit</div>
                         </button>
                     </div>
                 </div>
@@ -240,101 +286,183 @@
                     <div class="process-content">
                         <div class="process-step active" data-step="0">
                             <div class="step-number">01</div>
-                            <h3>Free Audit</h3>
-                            <p>We analyze your current booking process. We'll show you exactly how many calls you're missing, where leads are falling through, and how much revenue you're losing. No obligation, just real numbers.</p>
+                            <h3>Discovery</h3>
+                            <p>We identify your business objectives, target audience, and technical requirements through in-depth consultation.</p>
                         </div>
                         <div class="process-step" data-step="1">
-                    <div class="step-number">02</div>
-                            <h3>Install System in 7 Days</h3>
-                            <p>We handle everything. Set up your missed-call text-back, booking system, mobile site, and dashboard. You don't need to know anything about tech. We do it all. System goes live in one week.</p>
-                </div>
-                        <div class="process-step" data-step="2">
-                    <div class="step-number">03</div>
-                            <h3>Capture and Track More Booked Jobs</h3>
-                            <p>Your system starts working immediately. Missed calls get texts. Customers book 24/7. Follow-ups happen automatically. You see every lead in your dashboard. More jobs get booked. Revenue goes up.</p>
+                            <div class="step-number">02</div>
+                            <h3>Design</h3>
+                            <p>We create user-focused designs that prioritize usability and conversion, aligned with your vision.</p>
                         </div>
-                </div>
+                        <div class="process-step" data-step="2">
+                            <div class="step-number">03</div>
+                            <h3>Build</h3>
+                            <p>We build scalable, performant solutions using proven technologies and best practices.</p>
+                        </div>
+                        <div class="process-step" data-step="3">
+                            <div class="step-number">04</div>
+                            <h3>Launch</h3>
+                            <p>We deploy your solution, optimize for success, and ensure you achieve your digital goals.</p>
+                        </div>
+                        <div class="process-step" data-step="4">
+                            <div class="step-number">05</div>
+                            <h3>Orbit</h3>
+                            <p>We provide ongoing support, updates, and scaling for your solution as you grow.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Proof / Credibility Section -->
+    <!-- Our Work Section -->
     <section class="selected-work-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Real Results</span>
-                <h2 class="section-title">What Changes After Installation</h2>
-                <p style="max-width: 800px; margin: 1.5rem auto 0; color: var(--text-secondary); font-size: 1.1rem;">Here's what typically improves when HVAC companies install this system.</p>
+                <span class="section-label">Portfolio</span>
+                <h2 class="section-title">Our Work</h2>
             </div>
-            <div class="selected-work-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+            <div class="selected-work-grid">
                 <div class="work-card">
-                    <div class="work-content">
-                        <h3 class="work-title">Before: Missing After-Hours Calls</h3>
-                        <p class="work-description">Calls come in after 5pm. Voicemails pile up. By morning, customers have moved on. You're losing 3-5 jobs per week to competitors who answer faster.</p>
-                        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                            <h4 style="color: #00D4FF; margin-bottom: 0.5rem;">After: Every Call Gets Captured</h4>
-                            <p style="margin: 0;">Missed calls instantly get a text. Customers can book right away, even at midnight. You wake up to booked jobs instead of missed opportunities.</p>
+                    <div class="work-visual">
+                        <div class="work-image-placeholder" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(0, 212, 255, 0.15) 100%);">
+                            <div class="work-image-overlay"></div>
                         </div>
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">Enterprise Dashboard Platform</h3>
+                        <p class="work-description">Replaced manual reporting with real-time analytics, reducing decision time by 70% and increasing operational efficiency.</p>
                     </div>
                 </div>
+                
                 <div class="work-card">
-                    <div class="work-content">
-                        <h3 class="work-title">Before: Slow Follow-Up</h3>
-                        <p class="work-description">You're on jobs all day. Leads sit in your phone for hours. When you finally call back, they've already booked. Response time is killing your conversion rate.</p>
-                        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                            <h4 style="color: #00D4FF; margin-bottom: 0.5rem;">After: Instant Automated Follow-Up</h4>
-                            <p style="margin: 0;">Every lead gets contacted immediately. Texts go out automatically. Customers book before they even think about calling someone else.</p>
+                    <div class="work-visual">
+                        <div class="work-image-placeholder" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.15) 100%);">
+                            <div class="work-image-overlay"></div>
                         </div>
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">E-commerce Platform</h3>
+                        <p class="work-description">Streamlined checkout process increased conversion by 45% and reduced cart abandonment by 60%.</p>
                     </div>
                 </div>
+                
                 <div class="work-card">
-                    <div class="work-content">
-                        <h3 class="work-title">Before: No Visibility Into Leads</h3>
-                        <p class="work-description">You don't know which marketing works. You can't track where calls come from. You're guessing on ad spend and missing opportunities to scale what works.</p>
-                        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                            <h4 style="color: #00D4FF; margin-bottom: 0.5rem;">After: Complete Lead Dashboard</h4>
-                            <p style="margin: 0;">See every call, text, booking, and revenue source in one place. Know exactly what's working. Double down on what makes money.</p>
+                    <div class="work-visual">
+                        <div class="work-image-placeholder" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(139, 92, 246, 0.15) 100%);">
+                            <div class="work-image-overlay"></div>
                         </div>
+                    </div>
+                    <div class="work-content">
+                        <h3 class="work-title">Fitness Tracking App</h3>
+                        <p class="work-description">Increased user retention by 65% and daily active users by 120% with intuitive design and seamless performance.</p>
                     </div>
                 </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="selected-work-footer">
+                <a href="portfolio.html" class="btn btn-secondary">View All Projects</a>
+            </div>
+        </div>
     </section>
 
-
-    <!-- Pricing Section -->
-    <section class="mission-control-section" style="background: rgba(0, 212, 255, 0.05);">
+    <!-- Reviews Section -->
+    <section class="reviews-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Pricing</span>
-                <h2 class="section-title">Simple, Transparent Pricing</h2>
-                <p style="max-width: 800px; margin: 1.5rem auto 0; color: var(--text-secondary); font-size: 1.1rem;">One-time setup. Low monthly fee. ROI in 1-2 extra jobs.</p>
+                <span class="section-label">What Clients Say</span>
+                <h2 class="section-title">Reviews</h2>
+            </div>
+        </div>
+        <div class="reviews-slider">
+            <div class="reviews-track">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"BlueOrbit Designs transformed our business with an incredible web application. The team was professional and delivered beyond our expectations!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Sarah Johnson</div>
+                            <div class="author-role">CEO, TechStart Inc.</div>
+                        </div>
+                    </div>
                 </div>
-            <div style="max-width: 600px; margin: 3rem auto; background: var(--bg-card); border: 2px solid var(--border-accent); border-radius: 16px; padding: 3rem; backdrop-filter: blur(20px);">
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <div style="font-size: 3rem; font-weight: 700; color: #00D4FF; margin-bottom: 0.5rem;">$2,500</div>
-                    <div style="color: var(--text-secondary); margin-bottom: 2rem;">One-Time Setup</div>
-                    <div style="font-size: 2rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">$250</div>
-                    <div style="color: var(--text-secondary);">Per Month</div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The mobile app they built for us is outstanding. User engagement has increased by 300% since launch!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Michael Chen</div>
+                            <div class="author-role">Founder, AppVenture</div>
+                        </div>
+                    </div>
                 </div>
-                <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem;">
-                    <h3 style="color: #00D4FF; margin-bottom: 1rem; text-align: center;">What's Included</h3>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">✓ Complete system installation</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">✓ Missed-call text-back setup</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">✓ 24/7 booking system</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">✓ Mobile-optimized website</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">✓ Lead dashboard & reporting</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">✓ Automated review requests</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">✓ Call tracking & analytics</li>
-                        <li style="padding: 0.75rem 0;">✓ Ongoing support & updates</li>
-                    </ul>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Their internal systems solution streamlined our operations perfectly. Highly recommend BlueOrbit Designs!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Emily Rodriguez</div>
+                            <div class="author-role">Operations Director, Global Corp</div>
+                        </div>
+                    </div>
                 </div>
-                <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(0, 212, 255, 0.1); border-radius: 8px; text-align: center;">
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;">
-                        <strong style="color: #00D4FF;">ROI:</strong> Just 1-2 extra booked jobs per month covers the entire cost. Most HVAC companies see 3-5 additional jobs in the first month.
-                    </p>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Exceptional service and attention to detail. BlueOrbit Designs delivered exactly what we needed on time and on budget."</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">David Thompson</div>
+                            <div class="author-role">CTO, InnovateNow</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The team at BlueOrbit Designs is incredibly talented. They understood our vision and brought it to life beautifully."</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Lisa Anderson</div>
+                            <div class="author-role">Marketing Director, BrandCo</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Duplicate cards for seamless loop -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"BlueOrbit Designs transformed our business with an incredible web application. The team was professional and delivered beyond our expectations!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Sarah Johnson</div>
+                            <div class="author-role">CEO, TechStart Inc.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The mobile app they built for us is outstanding. User engagement has increased by 300% since launch!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Michael Chen</div>
+                            <div class="author-role">Founder, AppVenture</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Their internal systems solution streamlined our operations perfectly. Highly recommend BlueOrbit Designs!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Emily Rodriguez</div>
+                            <div class="author-role">Operations Director, Global Corp</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -345,9 +473,9 @@
         <div class="container">
             <div class="cta-content">
                 <div class="cta-text">
-                    <h2>Stop Losing HVAC Jobs to Missed Calls</h2>
-                    <p>Get your free booking audit. See exactly how many calls you're missing and how much revenue you're leaving on the table.</p>
-                    <a href="contact.html" class="btn btn-primary btn-large">Request a Free HVAC Booking Audit</a>
+                    <h2>Ready to Transform Your Business?</h2>
+                    <p>Let's discuss how we can help you achieve your digital goals.</p>
+                    <a href="contact.html" class="btn btn-primary btn-large">Start a Project</a>
                 </div>
             </div>
         </div>
@@ -363,28 +491,31 @@
                             <img src="Vetern Owned & Operated-2.svg" alt="BlueOrbit Designs - Veteran Owned & Operated" style="height: 200px; width: auto; max-width: 500px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));">
                         </a>
                     </div>
-                    <p style="margin-top: 1rem;">Done-for-you booking systems for HVAC companies. Capture missed calls, book more jobs, automate follow-up.</p>
+                    <p style="margin-top: 1rem;">Building the future of digital innovation, one project at a time.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>System Features</h4>
+                    <h4>Services</h4>
                     <ul>
-                        <li>Missed-Call Text-Back</li>
-                        <li>24/7 Booking System</li>
-                        <li>Mobile-Optimized Website</li>
-                        <li>Lead Dashboard</li>
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="app-development.html">App Development</a></li>
+                        <li><a href="internal-systems.html">Internal Systems</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Company</h4>
                     <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="white-label-partner.html">White Label Partner</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Get Started</h4>
+                    <h4>Connect</h4>
                     <ul>
-                        <li><a href="contact.html">Free Booking Audit</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">GitHub</a></li>
                     </ul>
                 </div>
             </div>
